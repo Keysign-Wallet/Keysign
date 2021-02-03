@@ -1,0 +1,24 @@
+{
+	"name": "keysign",
+	"version": "0.1.1",
+	"description": "Keysign extension",
+	"main": "index.js",
+	"scripts": {
+		"prettier": "npx prettier --write ."
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/mrbusysky/keysign.git"
+	},
+	"keywords": [
+		"tnb",
+		"keysign",
+		"extension"
+	],
+	"author": "mrbusysky",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/mrbusysky/keysign/issues"
+	},
+	"homepage": "https://github.com/mybusysky/keysign"
+}

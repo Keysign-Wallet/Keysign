@@ -1,0 +1,43 @@
+{
+	"name": "__MSG_keysign__",
+	"description": "__MSG_description__",
+	"default_locale": "en",
+	"version": "0.2.2",
+	"permissions": ["storage", "tabs", "idle"],
+	"browser_action": {
+		"default_popup": "html/popup.html",
+		"default_icon": "images/app-icon.png"
+	},
+	"icons": {
+		"128": "images/app-icon-128.png"
+	},
+	"background": {
+		"scripts": [
+			"vendor/crypto-js.js",
+			"vendor/md5.min.js",
+			"js/wallet/libs/encrypt.js",
+			"vendor/tnb.min.js",
+			"vendor/jquery.min.js",
+			"js/wallet/libs/wallet.js",
+			"js/wallet/libs/walletsList.js",
+			"js/handshake/background/autolock.js",
+			"js/handshake/background/init.js",
+			"js/handshake/background/errors.js",
+			"js/handshake/background/transactions.js",
+			"js/handshake/background/dialog_lifecycle.js",
+			"js/handshake/background/auth.js"
+		],
+		"persistent": true
+	},
+	"web_accessible_resources": [
+		"/images/app-icon.png",
+		"js/handshake/tnb_keysign.js"
+	],
+	"content_scripts": [
+		{
+			"matches": ["https://*/*", "http://*/*"],
+			"js": ["vendor/jquery.min.js", "js/handshake/web_interface.js"]
+		}
+	],
+	"manifest_version": 2
+}

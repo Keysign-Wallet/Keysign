@@ -1,0 +1,539 @@
+{
+	"accountNumber_key": {
+		"message": "Account Number",
+		"description": "type of key"
+	},
+	"hs_auth_canceled": {
+		"message": "Request was canceled by the user."
+	},
+	"hs_auth_locked": {
+		"message": "The wallet is locked!"
+	},
+	"hs_auth_locked_desc": {
+		"message": "The current website is trying to send a request to the Keysign browser extension. Please enter your password below to unlock the wallet and continue."
+	},
+	"hs_init_no_wallet": {
+		"message": "No wallet!",
+		"description": "when user didnt create a wallet yet"
+	},
+	"hs_lifecycle_request_canceled": {
+		"message": "Request was canceled by the user.",
+		"description": "Generic answer to websites when user cancel transaction (in the background so it wont show on screen)"
+	},
+	"hs_bgd_broadcast": {
+		"message": "The transaction has been broadcasted successfully."
+	},
+	"hs_bgd_error": {
+		"message": "There was an error broadcasting this transaction:"
+	},
+	"hs_bgd_error_broadcasting": {
+		"message": "There was an error broadcasting this transaction, please try again."
+	},
+	"hs_bgd_transfer_adjust_balance": {
+		"message": "Insufficient $1 balance on account $2."
+	},
+	"hs_bgd_transfer_get_account": {
+		"message": "Cannot find account $1."
+	},
+	"hs_bgd_transfer_success": {
+		"message": "Successfully transferred $1 TNBC <br/><br/> From:<br/> <span style=\"overflow: scroll; display: block;\">$2</span> <br/> To: <br/> <span style=\"overflow: scroll; display: block;\">$3</span>"
+	},
+	"hs_bgd_verify_error": {
+		"message": "Account number don't match selected wallet signing key."
+	},
+	"hs_bgd_verify_success": {
+		"message": "Verified!"
+	},
+	"description": {
+		"message": "Secure TNB Wallet Extension.",
+		"description": "Extension description, as shown in the store."
+	},
+	"dialog_amount": {
+		"message": "Amount",
+		"description": "When website request a transfer"
+	},
+	"dialog_balance": {
+		"message": "Balance",
+		"description": "When website request a transfer"
+	},
+	"dialog_broadcasting": {
+		"message": "Broadcasting transaction to the blockchain...",
+		"description": "When a website requested a transaction and it was approved."
+	},
+	"dialog_cancel": {
+		"message": "Cancel",
+		"description": "Cancel button"
+	},
+	"dialog_confirm": {
+		"message": "Confirm"
+	},
+	"dialog_extensions": {
+		"message": "Extensions",
+		"description": "When website request a generic broadcast"
+	},
+	"dialog_header_broadcasting": {
+		"message": "Broadcasting",
+		"description": "when waiting from confirmation"
+	},
+	"dialog_header_error": {
+		"message": "Error",
+		"description": "Generic error"
+	},
+	"dialog_header_success": {
+		"message": "Success",
+		"description": "Generic success message"
+	},
+	"dialog_header_unlock": {
+		"message": "Unlock keysign",
+		"description": "When website request a transaction but keysign is locked"
+	},
+	"dialog_header_wrong_pwd": {
+		"message": "Wrong password!"
+	},
+	"dialog_message": {
+		"message": "Message",
+		"description": "When website request a custom json"
+	},
+	"dialog_ok": {
+		"message": "Ok",
+		"description": "Ok button"
+	},
+	"dialog_register_error": {
+		"message": "You need to setup keysign.",
+		"description": "Person needs to create a master password and wallet."
+	},
+	"dialog_title": {
+		"message": "Title",
+		"description": "When website request a post"
+	},
+	"dialog_title_transfer": {
+		"message": "Transfer",
+		"description": "Website request title"
+	},
+	"dialog_title_verify": {
+		"message": "Verify",
+		"description": "Website request title"
+	},
+	"dialog_to": {
+		"message": "To",
+		"description": "When website request a transfer"
+	},
+	"dialog_unlock": {
+		"message": "Unlock",
+		"description": "Unlock button"
+	},
+	"import_html_error": {
+		"message": "There was an error importing your keys.<br/>Make sure you that you are using the same master key than when you exported the file."
+	},
+	"import_html_success": {
+		"message": "You successfully imported your keys!"
+	},
+	"import_html_text": {
+		"message": "Import your keys from another keysign instance using a .txt file.<br/><br/>You need to use the same master password on both instances to decrypt the keys."
+	},
+	"keysign": {
+		"message": "Keysign",
+		"description": "Extension name"
+	},
+	"popup_account_redeem": {
+		"message": "You have Rewards ready to redeem in the amount of",
+		"description": "On claim reward page (click little gift icon from main page when rewards are available to claim)"
+	},
+	"popup_accounts_already_have_key": {
+		"message": "You already entered your $1 key!",
+		"description": "when trying to add a new key for the wallets (in manage wallets), but the key is already there."
+	},
+	"popup_accounts_already_registered": {
+		"message": "You already registered a wallet for $1!",
+		"description": "when trying to add a wallet already saved on keysign"
+	},
+	"popup_accounts_fill": {
+		"message": "Please fill the fields.",
+		"description": "when adding new wallet but not filling all fields"
+	},
+	"popup_accounts_incorrect_key": {
+		"message": "Incorrect account number or signing key.",
+		"description": "when adding new wallet with incorrect key"
+	},
+	"popup_accounts_no_recent_transfers": {
+		"message": "No recent transfer",
+		"description": "if history is empty"
+	},
+	"popup_accounts_reveal_private": {
+		"message": "Click to show private key",
+		"description": "On manage wallets"
+	},
+	"popup_accounts_try_again": {
+		"message": "Please try again later!",
+		"description": "Generic unknown error, user is invited to try again"
+	},
+	"popup_add_wallet": {
+		"message": "Add New Wallet",
+		"description": "From wallets list dropdown"
+	},
+	"popup_bank_add": {
+		"message": "ADD BANK",
+		"description": "On preferences, bank dropdown. BANK stands for bank node"
+	},
+	"popup_bank_added": {
+		"message": "BANK added successfully!",
+		"description": "On preferences >Add BANK "
+	},
+	"popup_bank_invalid_url": {
+		"message": "Invalid URL!",
+		"description": "On preferences >Add BANK > when url entered is invalid "
+	},
+	"popup_bank_exists": {
+		"message": "The entered bank already exists",
+		"description": "On preferences >Add BANK > when url entered is already exists "
+	},
+	"popup_broadcast": {
+		"message": "Broadcast",
+		"description": "On preferences, list of rights that were given to some websites."
+	},
+	"popup_html_about": {
+		"message": "About Keysign",
+		"description": "on settings page"
+	},
+	"popup_html_about_text": {
+		"message": "Keysign is an extension browser wallet created to work with <a href=\"https://www.thenewboston.com\" target=\"_blank\">TheNewBoston Blockchain</a> <br><br> It was developed and designed by both <a href=\"https://github.com/mrbusysky\" target=\"_blank\">MrSky</a> and <a href=\"https://github.com/AbhayAysola\" target=\"_blank\">Abhay</a>.",
+		"description": "on about keysign"
+	},
+	"popup_html_accountNumber": {
+		"message": "Account number",
+		"description": "When adding an wallet via Account number"
+	},
+	"popup_html_accountNumber_info": {
+		"message": "Account Number",
+		"description": "Chain account number"
+	},
+	"popup_html_accountNumber_key": {
+		"message": "Account Number",
+		"description": "placeholder for entering Account Number"
+	},
+	"popup_html_add_bank": {
+		"message": "Add BANK",
+		"description": "on preferences"
+	},
+	"popup_html_add_bank_text": {
+		"message": "Add your BANK node here:",
+		"description": "on preferences"
+	},
+	"popup_html_add_by_keys": {
+		"message": "Use ACCN/SIGNKEY",
+		"description": "When adding new wallet. In a button, must keep short. "
+	},
+	"popup_html_add_generate_keys": {
+		"message": "Generate Wallet",
+		"description": "When adding new wallet. In a button, must keep short."
+	},
+	"popup_html_add_key": {
+		"message": "Add Key",
+		"description": "on manage wallets, add a key not currently stored."
+	},
+	"popup_html_add_wallet": {
+		"message": "Add Wallet",
+		"description": "on settings page"
+	},
+	"popup_html_al_default_info": {
+		"message": "Lock the keysign manually or when the browser is closed.",
+		"description": "on autolock settings"
+	},
+	"popup_html_al_default_title": {
+		"message": "Default",
+		"description": "on autolock settings"
+	},
+	"popup_html_al_idle_info": {
+		"message": "Auto-lock the keysign after the browser window is idle for the specified number of minutes.",
+		"description": "on autolock settings"
+	},
+	"popup_html_al_idle_title": {
+		"message": "Idle Lock",
+		"description": "on autolock settings"
+	},
+	"popup_html_al_locked_info": {
+		"message": "Auto-lock the keysign when the device locks.",
+		"description": "on autolock settings"
+	},
+	"popup_html_al_locked_title": {
+		"message": "Device Lock",
+		"description": "on autolock settings"
+	},
+	"popup_html_auth_placeholder_walletName": {
+		"message": "Wallet Name"
+	},
+	"popup_html_autolock": {
+		"message": "Auto Lock",
+		"description": "on settings page"
+	},
+	"popup_html_balance": {
+		"message": "$1 Balance",
+		"description": "When initiating a TNBC transfer. $1 is a variable that will be replaced by a currency name."
+	},
+	"popup_html_bank_node": {
+		"message": "BANK Node",
+		"description": "on preferences"
+	},
+	"popup_html_change_password": {
+		"message": "Change Password",
+		"description": "on settings page"
+	},
+	"popup_html_change_password_text": {
+		"message": "Input your old password for confirmation, then chose a new password.",
+		"description": "on change password"
+	},
+	"popup_html_chose_add_method": {
+		"message": "You can add your keys by entering a Account Number and Signing key.<br/>Alternatives include Generating a Wallet or importing your keys.",
+		"description": "Text when adding new method."
+	},
+	"popup_html_clear": {
+		"message": "Clear All Data",
+		"description": "on settings page"
+	},
+	"popup_html_confirm": {
+		"message": "Confirm",
+		"description": "Generic button"
+	},
+	"popup_html_copied": {
+		"message": "Key copied to clipboard!",
+		"description": "on preferences when clicking on a key"
+	},
+	"popup_html_delete_account": {
+		"message": "DELETE THIS WALLET",
+		"description": "on manage wallets"
+	},
+	"popup_html_export": {
+		"message": "Export",
+		"description": "on import / export settings"
+	},
+	"popup_html_forgot": {
+		"message": "Forgot Password?",
+		"description": "On unlock page"
+	},
+	"popup_html_generate_wallet_text": {
+		"message": "If you want to add a new wallet by generate all you have to do is put a wallet name and click save. It will generate your Account Number/ Signing key and save them.",
+		"description": "On Add new wallet => via generate"
+	},
+	"popup_html_history": {
+		"message": "History",
+		"description": "on popup main page"
+	},
+	"popup_html_import": {
+		"message": "Import",
+		"description": "on import / export settings"
+	},
+	"popup_html_import_export": {
+		"message": "Import / Export",
+		"description": "on settings page"
+	},
+	"popup_html_import_export_text": {
+		"message": "You can export all your keys encrypted in a file. This will allow you to import them to keysign on another device or simply safeguard them.<br/><br/>When importing, only accounts that are not already present on the instance will be added.",
+		"description": "on import / export settings"
+	},
+	"popup_html_import_key": {
+		"message": "Import Key",
+		"description": "Import one key"
+	},
+	"popup_html_import_keys": {
+		"message": "Import Keys",
+		"description": "Import all keys"
+	},
+	"popup_html_import_success": {
+		"message": "Import successful! <br><br>Please select the Keys you wish to store with tnb keysign:",
+		"description": "When adding an wallet via master key"
+	},
+	"popup_html_loading": {
+		"message": "Loading...",
+		"description": "When initiating a TNBC transfer and the balance is loading."
+	},
+	"popup_html_manage_accounts": {
+		"message": "Manage Wallets",
+		"description": "on settings page"
+	},
+	"popup_html_new_password": {
+		"message": "New Password",
+		"description": "On settings, change password"
+	},
+	"popup_html_no_pref": {
+		"message": "No preferences",
+		"description": "on preferences"
+	},
+	"popup_html_old_password": {
+		"message": "Old Password",
+		"description": "on change password"
+	},
+	"popup_html_password": {
+		"message": "Password",
+		"description": "Placeholder in input for password"
+	},
+	"popup_html_pref": {
+		"message": "Preferences",
+		"description": "on settings page"
+	},
+	"popup_html_pref_info": {
+		"message": "The default bank is set by keysign. To add a new bank click ADD BANK in dropdown.",
+		"description": "on preferences"
+	},
+	"popup_html_register": {
+		"message": "The best way to access your TNB wallets. Manage TNB assets, and connect to TNB applications. Keysign is Simple. Lightweight and Secure. <br/><br/> Lets start by creating a Keysign password.",
+		"description": "Text on registration page"
+	},
+	"popup_html_remove": {
+		"message": "Remove",
+		"description": "on manage wallets, remove key"
+	},
+	"popup_html_reset": {
+		"message": "Reset Wallet",
+		"description": "After clicking forgot password"
+	},
+	"popup_html_reset_desc": {
+		"message": "If you forgot your password, you can clear your data but will have to enter all your keys again.",
+		"description": "text after clicking forgot password"
+	},
+	"popup_html_save": {
+		"message": "Save",
+		"description": "Generic button"
+	},
+	"popup_html_select_bank": {
+		"message": "Select an BANK node",
+		"description": "on preferences"
+	},
+	"popup_html_send": {
+		"message": "Send $1",
+		"description": "ex: Send TNBC"
+	},
+	"popup_html_send_max": {
+		"message": "Send Max",
+		"description": "on transfer"
+	},
+	"popup_html_send_transfer": {
+		"message": "Send"
+	},
+	"popup_html_settings": {
+		"message": "Settings",
+		"description": "on settings page"
+	},
+	"popup_html_setup": {
+		"message": "Setup",
+		"description": "when adding new wallet"
+	},
+	"popup_html_setup_text": {
+		"message": "Enter a unique Wallet name, and Signing Key below. Your Signing Key will be encrypted on submit.<br/><br/> You may add / remove tnb wallets any time.",
+		"description": "When adding new wallet"
+	},
+	"popup_html_signin": {
+		"message": "Sign In"
+	},
+	"popup_html_signingKey": {
+		"message": "Signing key",
+		"description": "When adding an account via Signing key"
+	},
+	"popup_html_signingKey_info": {
+		"message": "For signing transactions",
+		"description": "Chain signing key"
+	},
+	"popup_html_signingKey_key": {
+		"message": "Signing Key",
+		"description": "placeholder for entering Signing Key"
+	},
+	"popup_html_submit": {
+		"message": "Submit",
+		"description": "Generic button"
+	},
+	"popup_html_transfer": {
+		"message": "Transfer",
+		"description": "On transfer confirmation page"
+	},
+	"popup_html_transfer_amount": {
+		"message": "Amount",
+		"description": "On transfer confirmation page"
+	},
+	"popup_html_transfer_confirm_text": {
+		"message": "Please confirm your transfer.<br>This cannot be undone.",
+		"description": "On transfer confirmation page"
+	},
+	"popup_html_transfer_from": {
+		"message": "From: ",
+		"description": "On transfer confirmation page"
+	},
+	"popup_html_transfer_funds": {
+		"message": "Transfer Funds",
+		"description": "When initiating a TNBC transfer"
+	},
+	"popup_html_transfer_to": {
+		"message": "To: ",
+		"description": "On transfer confirmation page"
+	},
+	"popup_html_unlock": {
+		"message": "The ultimate <strong>tnb</strong> wallet. Manage tnb assets, and connect to TNB applications.<br/><br/>Simple. Lightweight. Secure.",
+		"description": "Text on unlock page"
+	},
+	"popup_html_wallet_history": {
+		"message": "Wallet History",
+		"description": "Upon clicking on History"
+	},
+	"popup_master_changed": {
+		"message": "Your master password was changed successfully",
+		"description": "When changing pwd from settings"
+	},
+	"popup_password_mismatch": {
+		"message": "Your passwords do not match!",
+		"description": "when registering a password on keysign"
+	},
+	"popup_password_regex": {
+		"message": "Your password must be at least 8 characters long and include a lowercase letter, an uppercase letter and a digit or be at least 16 characters long without restriction.",
+		"description": "when registering the master pwd on keysign"
+	},
+	"popup_pwd_match": {
+		"message": "The new passwords do not match!",
+		"description": "When changing pwd from settings"
+	},
+	"popup_pwd_stronger": {
+		"message": "Please use a stronger password!",
+		"description": "When changing pwd from settings"
+	},
+	"popup_sign_buffer": {
+		"message": "Sign Message",
+		"description": "On preferences, list of rights that were given to some websites."
+	},
+	"popup_sign_tx": {
+		"message": "Sign Transaction",
+		"description": "On preferences, list of rights that were given to some websites."
+	},
+	"popup_signed_call": {
+		"message": "Signed Call",
+		"description": "On preferences, list of rights that were given to some websites."
+	},
+	"popup_transfer_success": {
+		"message": "Transfer successful!",
+		"description": "after sending a transfer"
+	},
+	"popup_utils_full": {
+		"message": "Already full!",
+		"description": "on main page, when rc or mana is full "
+	},
+	"popup_website": {
+		"message": "Website",
+		"description": "On preferences, list of rights that were given to some websites."
+	},
+	"popup_wrong_current_pwd": {
+		"message": "Wrong current password",
+		"description": "When changing pwd from settings"
+	},
+	"signingKey_key": {
+		"message": "Signing key",
+		"description": "type of key"
+	},
+	"transaction_error": {
+		"message": "Transaction error",
+		"description": "Generic error during transaction"
+	},
+	"unknown_error": {
+		"message": "Something went wrong! Please try again!",
+		"description": "Generic error"
+	},
+	"wrong_password": {
+		"message": "Wrong password!",
+		"description": "Wrong pwd upon unlocking"
+	}
+}

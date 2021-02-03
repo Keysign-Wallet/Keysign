@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/dialog.css" />
+	</head>
+
+	<body>
+		<div class="modal-content" id="mod_content">
+			<h2 id="dialog_header"></h2>
+			<h3
+				class="dialog-message"
+				id="dialog_message"
+				style="display: none"
+			></h3>
+			<div class="modal-body-error" style="display: none">
+				<div class="error" id="error_dialog"></div>
+				<button id="error-ok"></button>
+				<div class="register"></div>
+				<div class="unlock">
+					<div class="input_container">
+						<input id="unlock-dialog" type="password" />
+						<img
+							src="../images/icons8-lock-50.png"
+							class="input_img"
+						/>
+					</div>
+					<button id="yes-unlock"></button>
+					<button id="no-unlock"></button>
+					<div id="error-mk"></div>
+				</div>
+			</div>
+
+			<div id="tx_loading" style="display: none">
+				<br />
+				<img src="/images/loading.gif" />
+			</div>
+
+			<div id="modal-body-msg" style="display: none">
+				<div
+					id="acct_list"
+					class="custom-select custom-select-main transfer"
+				>
+					<select id="select_transfer"></select>
+				</div>
+
+				<div class="msg-data">
+					<h3 id="verify_ac"></h3>
+					<p id="transfer_warning"></p>
+					<h3 class="transfer"></h3>
+					<div
+						class="transfer"
+						id="to"
+						style="overflow: scroll"
+					></div>
+					<h3 class="transfer"></h3>
+					<div class="transfer" id="amount"></div>
+					<h3 class="transfer" id="balance_title"></h3>
+					<img
+						class="transfer balance_loading"
+						src="/images/loading.gif"
+					/>
+					<div class="transfer" id="balance"></div>
+					<h3 class="transfer" id="amount"></h3>
+					<h3 class="transfer" id="tx_fees_val"></h3>
+					<h3 class="transfer" id="tx_fees_bank"></h3>
+					<img
+						class="transfer balance_loading"
+						src="/images/loading.gif"
+					/>
+					<div class="transfer" id="balance_after"></div>
+				</div>
+			</div>
+			<div id="confirm_footer">
+				<button id="cancel"></button>
+				<button id="proceed"></button>
+			</div>
+		</div>
+		<script src="../vendor/jquery.min.js"></script>
+		<script src="../vendor/axios.min.js"></script>
+		<script src="../vendor/tnb.min.js"></script>
+		<script src="../js/handshake/dialog/localize.js"></script>
+		<script src="../js/wallet/libs/utils.js"></script>
+		<script src="../js/handshake/dialog/index.js"></script>
+		<script src="../vendor/tnb.min.js"></script>
+		<script src="../js/wallet/libs/wallet.js"></script>
+		<script src="../js/wallet/libs/walletsList.js"></script>
+	</body>
+</html>
