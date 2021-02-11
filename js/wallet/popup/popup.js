@@ -126,6 +126,10 @@ $('#submit_unlock').click(function () {
 $('#forgot_div button').click(function () {
 	walletsList.clear();
 	mk = null;
+	chrome.storage.local.set({
+		bank_list: ['http://54.193.31.159'],
+		current_bank: 'http://54.193.31.159',
+	});
 	$('#forgot_div').hide();
 	$('#register').show();
 });
