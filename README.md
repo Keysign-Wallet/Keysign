@@ -10,7 +10,7 @@ Keysign aims to bring security and ease-of-use to thenewboston platform.
 
 You can download and install the latest published version for the following browsers:
 
--   Google Chrome (or Chromium Based Browsers): [Find It here](https://chrome.google.com/webstore/detail/keysign/ebbhakfcelmlnjelefphomcnabjkgndj)
+-   Google Chrome (or Chromium Based Browsers): [Find It here](https://chrome.google.com/webstore/detail/keysign/icgabofdocpmhlcamjijifghkijnccbo)
 -   Firefox: [Find It here](https://addons.mozilla.org/en-US/firefox/addon/keysign)
 
 ## Features
