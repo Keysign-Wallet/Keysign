@@ -41,27 +41,15 @@ class Wallet {
 	}
 
 	async sendTransaction(recipient, amount, callback) {
-		const bank = await this.getBank();
-		amount = parseInt(amount);
-		const pv = await this.getPv();
-		const balance_lock = await pv.getAccountBalanceLock(
-			this.account.accountNumberHex
-		);
-		const config = await bank.getConfig();
-		const transactions = [
-			{
-				amount: config.default_transaction_fee,
-				recipient: config.account_number,
-			},
-			{
-				amount: config.primary_validator.default_transaction_fee,
-				recipient: config.primary_validator.account_number,
-			},
-			{ amount, recipient },
-		];
-		const data = await bank
-			.addBlocks(balance_lock.balance_lock, transactions, this.account)
-			.catch(err => callback(err.response, undefined));
+		const paymentHandler = new tnb.AccountPaymentHandler({
+			account: this.account,
+			bankUrl: (await this.getBank()).url,
+		});
+		await paymentHandler.init();
+		const data = await paymentHandler
+			.sendCoins(recipient, parseInt(amount))
+			.catch(err => console.log(err));
+		console.log(data);
 		callback(undefined, data);
 	}
 
