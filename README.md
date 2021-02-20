@@ -13,6 +13,13 @@ You can download and install the latest published version for the following brow
 -   Google Chrome (or Chromium Based Browsers): [Find It here](https://chrome.google.com/webstore/detail/keysign/icgabofdocpmhlcamjijifghkijnccbo)
 -   Firefox: [Find It here](https://addons.mozilla.org/en-US/firefox/addon/keysign)
 
+### Contributors:
+
+Clone the repository by `git clone https://github.com/Keysign-Wallet/keysign.git` in the command line.
+
+-   Google Chrome: Open up `chrome://extensions` and make sure to toggle "Developer Mode" on. Click on `Load Unpacked Extension` and navigate to the cloned directory.
+-   Firefox: Open `about:debugging` and go to "This Firefox". Click on `Load Temporary Addon` and navigate to the cloned directory. 
+
 ## Features
 
 The Key sign extension includes the following features:
@@ -28,7 +35,7 @@ The Key sign extension includes the following features:
 
 ## Website Integration
 
-[Handshake Documentation Can Be Found Here!](https://github.com/Keysign-Wallet/keysign/wiki/Documentation)
+[Handshake Documentation Can Be Found Here!](https://github.com/Keysign-Wallet/keysign/blob/master/DOCS.md)
 
 ## Contribution
 
