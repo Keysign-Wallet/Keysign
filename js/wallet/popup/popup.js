@@ -132,6 +132,7 @@ $('#forgot_div button').click(function () {
 	});
 	$('#forgot_div').hide();
 	$('#register').show();
+	$(':input').val('');
 });
 
 // Registration confirmation
