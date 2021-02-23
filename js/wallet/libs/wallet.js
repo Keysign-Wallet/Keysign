@@ -41,6 +41,8 @@ class Wallet {
 	}
 
 	async sendTransaction(recipient, amount, callback) {
+		if (amount + (await this.getTxFees()) > this.getBalance())
+			callback('Exceeding balance');
 		const paymentHandler = new tnb.AccountPaymentHandler({
 			account: this.account,
 			bankUrl: (await this.getBank()).url,
@@ -48,7 +50,7 @@ class Wallet {
 		await paymentHandler.init();
 		const data = await paymentHandler
 			.sendCoins(recipient, parseInt(amount))
-			.catch(err => console.log(err));
+			.catch(err => callback(err));
 		console.log(data);
 		callback(undefined, data);
 	}
