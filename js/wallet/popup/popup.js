@@ -204,7 +204,15 @@ function initializeMainMenu(options) {
 }
 // Show Confirmation window before transfer
 $('#send_transfer').click(function () {
-	confirmTransfer();
+	const to = $('#recipient').val();
+	const amount = $('#amt_send').val();
+	if (to !== '' && to.length >= 64 && amount !== '' && amount > 0)
+		confirmTransfer();
+	else {
+		showError(chrome.i18n.getMessage('popup_accounts_fill'));
+		$('#send_loader').hide();
+		$('#send_transfer').show();
+	}
 });
 
 function confirmTransfer() {
@@ -227,50 +235,23 @@ $('#confirm_send_transfer').click(function () {
 async function sendTransfer() {
 	const to = $('#recipient').val().replace(' ', '');
 	const amount = $('#amt_send').val();
-	if (to !== '' && amount !== '' && amount > 0) {
-		await activeWallet.sendTransaction(
-			to,
-			parseInt(amount),
-			(err, result) => {
-				$('#send_loader').hide();
-				$('#confirm_send_transfer').show();
-				if (err == null) {
-					$('#confirm_send_div').hide();
-					$('#send_div').show();
-					$('.error_div').hide();
-					$('.success_div')
-						.html(chrome.i18n.getMessage('popup_transfer_success'))
-						.show();
-					chrome.storage.local.get(
-						{ transfer_to: JSON.stringify({}) },
-						function (items) {
-							let transfer_to = JSON.parse(items.transfer_to);
-							if (!transfer_to[activeWallet.name])
-								transfer_to[activeWallet.name] = [];
-							if (
-								transfer_to[activeWallet.name].filter(elt => {
-									return elt === to;
-								}).length === 0
-							)
-								transfer_to[activeWallet.name].push(to);
-							chrome.storage.local.set({
-								transfer_to: JSON.stringify(transfer_to),
-							});
-						}
-					);
-					setTimeout(function () {
-						$('.success_div').hide();
-					}, 5000);
-				} else {
-					$('.success_div').hide();
-					showError(chrome.i18n.getMessage('unknown_error'));
-				}
-				$('#send_transfer').show();
-			}
-		);
-	} else {
-		showError(chrome.i18n.getMessage('popup_accounts_fill'));
+	await activeWallet.sendTransaction(to, parseInt(amount), (err, result) => {
 		$('#send_loader').hide();
+		$('#confirm_send_transfer').show();
+		if (err == null) {
+			$('#confirm_send_div').hide();
+			$('#send_div').show();
+			$('.error_div').hide();
+			$('.success_div')
+				.html(chrome.i18n.getMessage('popup_transfer_success'))
+				.show();
+			setTimeout(function () {
+				$('.success_div').hide();
+			}, 5000);
+		} else {
+			$('.success_div').hide();
+			showError(chrome.i18n.getMessage('unknown_error'));
+		}
 		$('#send_transfer').show();
-	}
+	});
 }
