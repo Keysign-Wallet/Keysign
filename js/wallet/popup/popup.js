@@ -127,8 +127,8 @@ $('#forgot_div button').click(function () {
 	walletsList.clear();
 	mk = null;
 	chrome.storage.local.set({
-		bank_list: ['http://54.193.31.159'],
-		current_bank: 'http://54.193.31.159',
+		bank_list: ['http://13.57.215.62'],
+		current_bank: 'http://13.57.215.62',
 	});
 	$('#forgot_div').hide();
 	$('#register').show();
