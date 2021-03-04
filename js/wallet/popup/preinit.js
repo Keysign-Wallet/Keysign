@@ -18,6 +18,14 @@ function parseQueryString() {
 	}
 }
 
+chrome.storage.local.get(['current_bank', 'bank_list'], items => {
+	if (items.bank_list === undefined || items.current_bank === undefined)
+		chrome.storage.local.set({
+			bank_list: ['http://13.57.215.62'],
+			current_bank: 'http://13.57.215.62',
+		});
+});
+
 parseQueryString();
 initializeVisibility(true);
 
