@@ -5,11 +5,13 @@ class Wallet {
 	}
 
 	async init() {
-		this.bank = await new Promise(resolve => {
-			chrome.storage.local.get(['current_bank'], items => {
-				resolve(new tnb.Bank(items.current_bank));
-			});
-		});
+		this.bank = this.bankUrl
+			? new tnb.Bank(this.bankUrl)
+			: await new Promise(resolve => {
+					chrome.storage.local.get(['current_bank'], items => {
+						resolve(new tnb.Bank(items.current_bank));
+					});
+			  });
 		const { primary_validator } = await this.bank.getConfig();
 		this.pv = new tnb.PrimaryValidator(
 			`${primary_validator.protocol}://${primary_validator.ip_address}${

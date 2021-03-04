@@ -20,11 +20,12 @@ const tnb_keysign = {
 	 * @param {String} amount Amount to be transfered.
 	 * @param {function} callback keysign's response to the request
 	 */
-	requestTransfer: function (to, amount, callback) {
+	requestTransfer: function (to, amount, callback, bank) {
 		const request = {
 			type: 'transfer',
 			to,
 			amount,
+			bank,
 		};
 		this.dispatchCustomEvent('swRequest_tnb', request, callback);
 	},
