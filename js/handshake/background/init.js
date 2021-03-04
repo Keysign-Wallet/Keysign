@@ -15,14 +15,6 @@ chrome.storage.local.get(['autolock'], items => {
 	if (items.autolock) startAutolock(JSON.parse(items.autolock));
 });
 
-chrome.storage.local.get(['current_bank', 'bank_list'], items => {
-	if (items.bank_list === undefined || items.current_bank === undefined)
-		chrome.storage.local.set({
-			bank_list: ['http://13.57.215.62'],
-			current_bank: 'http://13.57.215.62',
-		});
-});
-
 //Listen to the other parts of the extension
 
 const chromeMessageHandler = (msg, sender, sendResp) => {

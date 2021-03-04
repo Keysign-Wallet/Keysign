@@ -4,6 +4,7 @@ let custom_created = false;
 let manageKey,
 	getPref = false;
 let walletsList = new WalletsList();
+let defaultBank = 'http://13.57.215.62';
 
 /**
  * Temporary workaround for secondary monitors on MacOS where redraws don't happen
@@ -127,8 +128,8 @@ $('#forgot_div button').click(function () {
 	walletsList.clear();
 	mk = null;
 	chrome.storage.local.set({
-		bank_list: ['http://13.57.215.62'],
-		current_bank: 'http://13.57.215.62',
+		bank_list: ['defaultBank'],
+		current_bank: 'defaultBank',
 	});
 	$('#forgot_div').hide();
 	$('#register').show();
