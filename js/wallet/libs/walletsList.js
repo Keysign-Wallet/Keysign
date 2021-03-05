@@ -81,4 +81,11 @@ class WalletsList {
 		this.wallets.list = this.wallets.list.filter(i => i.name !== name);
 		return this;
 	}
+	changeBank(bank) {
+		this.wallets.list = this.wallets.list.map(wallet => {
+			wallet.bankUrl = bank;
+			return wallet;
+		});
+		return this;
+	}
 }

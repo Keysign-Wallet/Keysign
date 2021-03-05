@@ -36,6 +36,7 @@ function addNewBank(bank) {
 		chrome.storage.local.set(
 			{
 				bank_list: customBANKs,
+				current_bank: bank,
 			},
 			function () {
 				$('.success_div')

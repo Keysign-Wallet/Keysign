@@ -4,18 +4,16 @@ class Wallet {
 		this.name = name;
 	}
 
-	async getBank() {
-		return new Promise(resolve => {
-			chrome.storage.local.get(['current_bank'], items => {
-				resolve(new tnb.Bank(items.current_bank));
-			});
-		});
-	}
-
-	async getPV() {
-		const bank = await this.getBank();
-		const { primary_validator } = await bank.getConfig();
-		return new tnb.PrimaryValidator(
+	async init() {
+		this.bank = this.bankUrl
+			? new tnb.Bank(this.bankUrl)
+			: await new Promise(resolve => {
+					chrome.storage.local.get(['current_bank'], items => {
+						resolve(new tnb.Bank(items.current_bank));
+					});
+			  });
+		const { primary_validator } = await this.bank.getConfig();
+		this.pv = new tnb.PrimaryValidator(
 			`${primary_validator.protocol}://${primary_validator.ip_address}${
 				primary_validator.port === null
 					? ''
@@ -25,27 +23,29 @@ class Wallet {
 	}
 
 	async getBalance() {
-		const pv = await this.getPV();
-		const balanceObject = await pv.getAccountBalance(
+		await this.init();
+		const balanceObject = await this.pv.getAccountBalance(
 			this.account.accountNumberHex
 		);
 		return balanceObject.balance === null ? 0 : balanceObject.balance;
 	}
 
 	async getTransactions() {
-		const bank = await this.getBank();
-		const transactions = await axios.get(bank.url + '/bank_transactions', {
-			params: { account_number: this.account.accountNumberHex },
-		});
+		await this.init();
+		const transactions = await axios.get(
+			this.bank.url + '/bank_transactions',
+			{
+				params: { account_number: this.account.accountNumberHex },
+			}
+		);
 		return transactions.data.results;
 	}
 
 	async sendTransaction(recipient, amount, callback) {
-		if (amount + (await this.getTxFees()) > this.getBalance())
-			callback('Exceeding balance');
+		await this.init();
 		const paymentHandler = new tnb.AccountPaymentHandler({
 			account: this.account,
-			bankUrl: (await this.getBank()).url,
+			bankUrl: this.bank.url,
 		});
 		await paymentHandler.init();
 		const data = await paymentHandler
@@ -56,7 +56,8 @@ class Wallet {
 	}
 
 	async getTxFees() {
-		const config = await (await this.getBank()).getConfig();
+		await this.init();
+		const config = await this.bank.getConfig();
 		return {
 			bank_fee: config.default_transaction_fee,
 			val_fee: config.primary_validator.default_transaction_fee,
