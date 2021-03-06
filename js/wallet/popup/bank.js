@@ -56,7 +56,7 @@ function showCustomBank() {
 	chrome.storage.local.get(['bank_list'], function (items) {
 		if (items.bank_list) {
 			for (bank of items.bank_list) {
-				if (bank !== 'defaultBank') {
+				if (bank !== defaultBank) {
 					$('#custom_bank').append(
 						"<div><div class='pref_name'>" +
 							bank +

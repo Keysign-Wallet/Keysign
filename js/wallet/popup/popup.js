@@ -128,8 +128,8 @@ $('#forgot_div button').click(function () {
 	walletsList.clear();
 	mk = null;
 	chrome.storage.local.set({
-		bank_list: ['defaultBank'],
-		current_bank: 'defaultBank',
+		bank_list: [defaultBank],
+		current_bank: defaultBank,
 	});
 	$('#forgot_div').hide();
 	$('#register').show();
