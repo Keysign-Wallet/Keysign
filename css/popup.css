@@ -750,14 +750,13 @@ h3 {
 }
 
 #about_div .about-content {
-	background-color: rgba(255, 255, 255, 0.2);
 	padding: 20px 40px;
 	position: absolute;
 	left: 0;
 }
 
 #about_div .about-content a {
-	color: #ff1616;
+	color: var(--fg-primary);
 }
 
 #manage_keys .back_pref {

@@ -135,7 +135,9 @@ $('#settings').click(function () {
 $('#about').click(function () {
 	$('#about_div').show();
 	$('#about_div h3').html(
-		chrome.runtime.getManifest().name + chrome.runtime.getManifest().version
+		`${chrome.runtime.getManifest().name} ${
+			chrome.runtime.getManifest().version
+		}`
 	);
 	$('#settings_div').hide();
 });

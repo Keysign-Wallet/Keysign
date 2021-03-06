@@ -76,7 +76,7 @@ input {
 
 input:focus {
 	outline: none !important;
-	box-shadow: 0 0 6px var(--fg-secondary);
+	border: solid 1px var(--fg-primary);
 }
 
 input::placeholder {
