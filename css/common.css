@@ -1,3 +1,13 @@
+:root {
+	--bg-primary: #ffffff;
+	--bg-secondary: #f3f6fa;
+	--fg-primary: #1565d8;
+	--fg-secondary: #363a41;
+	--stroke: #e8e8e8;
+	--text-primary: #373f41;
+	--text-secondary: #737b7d;
+}
+
 @font-face {
 	font-family: Futura;
 	src: url('../fonts/Futura-Boo.otf');
@@ -9,7 +19,7 @@ html {
 	border-radius: 1px;
 	margin: 0 !important;
 	padding: 0 !important;
-	background: #ffffff !important;
+	background: var(--bg-primary) !important;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	top: 0;
