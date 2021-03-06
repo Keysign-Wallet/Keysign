@@ -328,7 +328,6 @@ h3 {
 #lock,
 #settings {
 	height: 100%;
-	width: auto;
 	cursor: pointer;
 }
 
@@ -705,22 +704,24 @@ h3 {
 
 #settings_div {
 	display: none;
-	width: 100%;
+	width: 353px;
+	padding: 10px 32px !important;
 }
 
 .setting_row {
 	display: flex;
 	align-items: center;
-	height: 60px;
+	height: 56px;
 	width: 100%;
-	margin: 0px -32px 0px -32px;
+	margin: 0px -32px 2px -32px;
 	padding: 0 32px 0 32px;
 	vertical-align: middle;
 	cursor: pointer;
+	background: var(--alt-bg);
 }
 
 #settings_div div:first-of-type {
-	margin-bottom: 46px;
+	margin-bottom: 25px;
 }
 
 .setting_row img {
@@ -734,13 +735,11 @@ h3 {
 	font-size: 16px;
 }
 
-.setting_row:nth-child(odd),
 .keys_info:nth-child(odd) {
 	background-color: rgba(33, 37, 41, 0.68);
 	color: #fff;
 }
 
-.setting_row:nth-child(even),
 .keys_info:nth-child(even) {
 	background-color: rgba(196, 196, 196, 0.32);
 }
