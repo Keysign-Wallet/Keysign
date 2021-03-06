@@ -19,10 +19,17 @@ function parseQueryString() {
 }
 
 chrome.storage.local.get(['current_bank', 'bank_list'], items => {
-	if (items.bank_list === undefined || items.current_bank === undefined)
+	if (items.bank_list) {
+		items.bank_list.push(defaultBank);
+		if (!items.bank_list.includes(defaultBank))
+			chrome.storage.local.set({
+				bank_list: items.bank_list,
+				current_bank: defaultBank,
+			});
+	} else
 		chrome.storage.local.set({
-			bank_list: ['http://13.57.215.62'],
-			current_bank: 'http://13.57.215.62',
+			bank_list: [defaultBank],
+			current_bank: defaultBank,
 		});
 });
 
