@@ -216,8 +216,8 @@ input:focus {
 #add_wallet_types_div button:hover,
 #generate_wallet_account_div button:hover,
 #import_settings button:hover {
-	background-color: #ff1616;
-	border: solid 1px #ff1616;
+	background-color: var(--fg-primary);
+	border: solid 1px var(--fg-primary);
 }
 
 #change_password p {
