@@ -1,6 +1,15 @@
-.logo-white {
+.keysign-logo {
 	height: 60px;
-	opacity: 0.8;
+	position: relative;
+	top: 10px;
+	left: 30px;
+}
+
+#register-heading {
+	display: inline;
+	font-size: xxx-large;
+	color: var(--fg-secondary);
+	padding: 0 0 0 40px;
 }
 
 #main {
