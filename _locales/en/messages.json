@@ -395,7 +395,7 @@
 		"description": "Generic button"
 	},
 	"popup_html_select_bank": {
-		"message": "Select an BANK node",
+		"message": "Select a BANK node",
 		"description": "on preferences"
 	},
 	"popup_html_send": {

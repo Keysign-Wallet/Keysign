@@ -331,6 +331,11 @@ h3 {
 	cursor: pointer;
 }
 
+#settings {
+	position: relative;
+	left: 20px;
+}
+
 #lock {
 	margin-right: 19.8px;
 	margin-left: 19.8px;
@@ -356,7 +361,7 @@ h3 {
 }
 
 #custom_select_bank .select-selected {
-	padding-top: 12px;
+	padding-top: 18px;
 }
 
 .select-selected:before {
@@ -439,6 +444,7 @@ h3 {
 	height: 43px;
 	margin-left: -32px;
 	margin-right: -32px;
+	margin-bottom: 17px;
 }
 
 .wallets .select-items div {
@@ -506,7 +512,7 @@ h3 {
 	display: inline-block;
 	margin-left: -32px;
 	width: 350px;
-	background-color: #eaeaea;
+	background-color: var(--alt-bg);
 	box-sizing: border-box;
 	margin-right: -32px;
 	padding: 13px 0;
@@ -566,14 +572,12 @@ h3 {
 .main-button {
 	height: 51px;
 	width: 127px;
-	color: white;
 	font-size: 18px;
 	line-height: 25px;
 	cursor: pointer;
 	text-transform: uppercase;
 	border: 1px transparent;
 	border-radius: 5px;
-	background-color: #7e8c9a;
 	background-size: 51px 51px;
 	background-repeat: no-repeat;
 }
@@ -586,14 +590,6 @@ h3 {
 .main-button:nth-of-type(2) {
 	margin-bottom: 15px;
 	margin-top: 14px;
-}
-
-#send {
-	background-color: #000000;
-}
-
-#history {
-	background-color: #000000;
 }
 
 #send_div input {
@@ -921,10 +917,6 @@ h3 {
 #mn {
 	margin-top: 10px;
 	margin-bottom: 50px;
-}
-
-.dash-button:hover {
-	background-color: #ff1616 !important;
 }
 
 .no_active::after {
