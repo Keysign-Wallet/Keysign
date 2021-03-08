@@ -349,10 +349,10 @@ h3 {
 }
 
 .select-selected {
-	background-color: #58616a;
+	background-color: var(--fg-primary);
 	padding-left: 20px !important;
-	height: 50px;
-	color: #ffffff;
+	height: 60px;
+	color: var(--bg-primary);
 }
 
 #custom_select_bank .select-selected {
@@ -360,7 +360,7 @@ h3 {
 }
 
 .select-selected:before {
-	background-image: url('../images/icons8-coin-wallet-50.png');
+	background-image: url('../assets/SVGs/wallet-white.svg');
 	background-size: 16px 16px;
 	background-repeat: no-repeat;
 	display: inline-block;
@@ -377,11 +377,11 @@ h3 {
 .select-selected:after {
 	position: absolute;
 	content: '';
-	top: 22px;
+	top: 28px;
 	right: 10px;
 	width: 0;
 	height: 0;
-	border: 10px solid transparent;
+	border: 8px solid transparent;
 	border-color: white transparent transparent transparent;
 }
 
@@ -398,10 +398,9 @@ h3 {
 	font-family: Futura;
 	font-size: 20px;
 	line-height: 28px;
-	padding: 9px 0px 8px 65px;
+	padding: 14px 0px 8px 65px;
 	/*border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;*/
 	cursor: pointer;
-	border-radius: 3px;
 }
 
 /*style items (options):*/
@@ -461,7 +460,7 @@ h3 {
 
 .select-items div:hover,
 .same-as-selected {
-	background-color: #ff1616;
+	background-color: var(--fg-primary);
 }
 
 #currency_send {
