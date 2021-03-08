@@ -155,12 +155,14 @@ function manageWallets() {
 		$('#manage_keys .select-selected')[0].innerText
 	);
 	$('#accountNumber_key').text(selWallet.account.accountNumberHex);
+	console.log(selWallet.account.signingKeyHex);
 	const signingKey = $('#signingKey_manage');
-	signingKey.text('CLICK HERE TO REVEAL');
-	signingKey.click(() =>
+	const reveal = $('.reveal-sign');
+	signingKey.text('*'.repeat(selWallet.account.signingKeyHex.length));
+	reveal.click(() =>
 		signingKey.text(
 			signingKey.text() === selWallet.account.signingKeyHex
-				? 'CLICK HERE TO REVEAL'
+				? '*'.repeat(selWallet.account.signingKeyHex.length)
 				: selWallet.account.signingKeyHex
 		)
 	);
@@ -173,13 +175,9 @@ function manageWallets() {
 	const accountCopy = $('.copy-acn');
 	const signingKeyCopy = $('.copy-sign');
 	accountCopy.click(() => {
-		accountCopy.text('Copied!');
-		setTimeout(() => accountCopy.text('Copy'), 2000);
 		navigator.clipboard.writeText(selWallet.account.accountNumberHex);
 	});
 	signingKeyCopy.click(() => {
-		signingKeyCopy.text('Copied!');
-		setTimeout(() => signingKeyCopy.text('Copy'), 2000);
 		navigator.clipboard.writeText(selWallet.account.signingKeyHex);
 	});
 }

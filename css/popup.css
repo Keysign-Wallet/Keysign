@@ -734,15 +734,6 @@ h3 {
 	font-size: 16px;
 }
 
-.keys_info:nth-child(odd) {
-	background-color: rgba(33, 37, 41, 0.68);
-	color: #fff;
-}
-
-.keys_info:nth-child(even) {
-	background-color: rgba(196, 196, 196, 0.32);
-}
-
 #about_div div:first-of-type {
 	margin-bottom: 30px;
 }
@@ -762,20 +753,22 @@ h3 {
 }
 
 #manage_keys .wallets {
-	margin-bottom: 24.6px;
+	margin-bottom: 30px;
 }
 
 .keys_info {
 	position: relative;
 	min-height: 80px;
-	margin: 0px -32px 0px -32px;
+	margin: 0px -32px 1px -32px;
 	padding: 11px 32px 10px 32px;
 	box-sizing: border-box;
+	color: var(--text-primary);
+	background: var(--alt-bg);
 }
 
 .keys_info div {
-	font-size: 10px;
-	line-height: 10px;
+	font-size: 14px;
+	line-height: 12px;
 }
 
 .keys_info span {
@@ -793,28 +786,28 @@ h3 {
 	float: left;
 	display: inline-block;
 	overflow: scroll;
-	width: 100%;
-	color: #ff1616;
+	font-size: small !important;
+	width: 80%;
 }
 
-.copy-acn {
+.copy-acn,
+.copy-sign,
+.reveal-sign {
 	width: 10%;
 	float: right;
 	display: inline-block;
-	color: #ffffff;
 }
-.copy-sign {
-	width: 10%;
-	float: right;
-	display: inline-block;
-	color: #ff1616;
+
+.reveal-sign {
+	position: relative;
+	top: 5px;
+	left: 30px;
 }
 
 .remove_key {
 	cursor: pointer;
 	display: inline-block;
 	width: 100px;
-	color: #ff1616;
 	text-align: right;
 }
 
@@ -843,7 +836,6 @@ h3 {
 
 #delete_account {
 	margin-top: 40px;
-	background-color: #ff1616;
 }
 
 #estimation_info div:first-of-type {
