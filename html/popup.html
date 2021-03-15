@@ -68,6 +68,21 @@
 		</div>
 		<div id="acc_transfers" class="hide-at-start">
 			<div class="back_menu back_enabled"></div>
+			<div class="key_checkbox toggle_fees">
+				<label
+					for="default"
+					class="checkbox_container"
+					id="div_default"
+				>
+					<div class="fees_title">SHOW FEES</div>
+					<div class="fees_info">
+						Check box to show transaction fees in the wallet
+						history.
+					</div>
+					<input type="checkbox" checked="true" id="default" />
+					<span class="checkmark" />
+				</label>
+			</div>
 			<div id="transfer_rows" class="show-scroll"></div>
 		</div>
 		<div id="add_wallet_types_div" class="settings_child hide-at-start">
@@ -274,7 +289,7 @@
 		</div>
 		<div id="confirm_send_div" class="hide-at-start">
 			<div class="back_enabled back_menu"></div>
-			<div class='confirm_transfer_text'></div>
+			<div class="confirm_transfer_text"></div>
 			<button id="confirm_send_transfer"></button>
 			<div class="loader" id="send_loader" style="display: none">
 				<div><img src="../images/loading.gif" /></div>

@@ -30,7 +30,7 @@ const showUserData = async () => {
 
 const getAccountHistory = async () => {
 	const transactions = await activeWallet.getTransactions();
-	$('#acc_transfers div').eq(1).empty();
+	$('#acc_transfers #transfer_rows').empty();
 	if (transactions.length !== 0) {
 		for (transaction of transactions) {
 			let timestamp = transaction.block.modified_date;
@@ -59,10 +59,10 @@ const getAccountHistory = async () => {
           ${TO + transaction.recipient + '\n' + FROM + transaction.block.sender}
           </span></div>`
 			);
-			$('#acc_transfers div').eq(1).append(transactions_element);
+			$('#acc_transfers #transfer_rows').append(transactions_element);
 		}
 	} else
-		$('#acc_transfers div')
+		$('#acc_transfers #transfer_rows')
 			.eq(1)
 			.append(
 				`<div class="transfer_row">${NO_RECENT_TRANSACTIONS}</div>`
