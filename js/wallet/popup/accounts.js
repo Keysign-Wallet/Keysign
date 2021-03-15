@@ -29,7 +29,12 @@ const showUserData = async () => {
 };
 
 const getAccountHistory = async () => {
-	const transactions = await activeWallet.getTransactions();
+	const showFees = $('#fees_toggle').prop('checked');
+	const transactions = showFees
+		? await activeWallet.getTransactions()
+		: (await activeWallet.getTransactions()).filter(i => i.fee === '');
+
+	console.log(transactions);
 	$('#acc_transfers #transfer_rows').empty();
 	if (transactions.length !== 0) {
 		for (transaction of transactions) {
@@ -68,6 +73,8 @@ const getAccountHistory = async () => {
 				`<div class="transfer_row">${NO_RECENT_TRANSACTIONS}</div>`
 			);
 };
+
+$('#fees_toggle').click(getAccountHistory);
 
 // Generates a new wallet
 $('#add_wallet_generate_keys').click(async () => {
