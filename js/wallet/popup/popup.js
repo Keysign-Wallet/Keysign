@@ -219,12 +219,12 @@ $('#send_transfer').click(function () {
 function confirmTransfer() {
 	const to = $('#recipient').val();
 	const amount = $('#amt_send').val();
-	const currency = $('#currency_send .select-selected').html();
-	$('#amt_conf_transfer').text(amount + ' ' + currency);
-	$('#confirm_send_div').show();
+	$('#amt_conf_transfer').text(amount + ' ' + 'TNBC');
+	$('.confirm_transfer_text').html(
+		chrome.i18n.getMessage('confirm_transfer_text', [amount, to])
+	);
 	$('#send_div').hide();
-	$('#from_conf_transfer').text(activeWallet.name);
-	$('#to_conf_transfer').text(to);
+	$('#confirm_send_div').show();
 }
 
 $('#confirm_send_transfer').click(function () {

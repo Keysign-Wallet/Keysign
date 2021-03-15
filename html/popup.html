@@ -265,18 +265,8 @@
 			<div id="send_form">
 				<div class="input_container">
 					<input id="recipient" />
-					<img
-						src="../images/icons8-hashtag-50.png"
-						class="input_img"
-					/>
 				</div>
-				<input type="number" id="amt_send" placeholder="0" />
-
-				<div class="custom-select" id="currency_send">
-					<select>
-						<option value="TNBC">TNBC</option>
-					</select>
-				</div>
+				<input type="number" id="amt_send" placeholder="AMOUNT" />
 				<h3 id="bank_fee"></h3>
 				<h3 id="val_fee"></h3>
 				<button id="send_transfer"></button>
@@ -284,14 +274,7 @@
 		</div>
 		<div id="confirm_send_div" class="hide-at-start">
 			<div class="back_enabled back_menu"></div>
-			<p></p>
-			<div id="transfer_warning"></div>
-			<h3></h3>
-			<div id="from_conf_transfer"></div>
-			<h3></h3>
-			<div id="to_conf_transfer"></div>
-			<h3></h3>
-			<div id="amt_conf_transfer"></div>
+			<div class='confirm_transfer_text'></div>
 			<button id="confirm_send_transfer"></button>
 			<div class="loader" id="send_loader" style="display: none">
 				<div><img src="../images/loading.gif" /></div>

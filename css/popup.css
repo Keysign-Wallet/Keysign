@@ -104,14 +104,6 @@ h3 {
 	height: 29.99px;
 }
 
-#send_div .input_container img {
-	position: absolute;
-	top: 9px;
-	left: 20px;
-	width: 29.99px;
-	height: 29.99px;
-}
-
 #recipient {
 	margin-bottom: 0px !important;
 }
@@ -594,12 +586,12 @@ h3 {
 	margin-top: 14px;
 }
 
-#send_div input {
-	padding-left: 10px;
-}
-
 #recipient {
 	padding-left: 65px !important;
+}
+
+#loading_balance {
+	font-weight: 600;
 }
 
 .transfer_balance {
@@ -622,11 +614,15 @@ h3 {
 }
 
 #send_div #amt_send {
-	width: 167px;
 	margin-right: 7px;
 	text-align: right;
 	margin-top: 20px;
 	margin-bottom: 5px;
+}
+
+#amt_send,
+#recipient {
+	padding-left: 30px !important;
 }
 
 #send_transfer {
