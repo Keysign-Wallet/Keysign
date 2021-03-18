@@ -28,50 +28,57 @@ const showUserData = async () => {
 		.html(numberWithCommas(await activeWallet.getBalance()));
 };
 
-const getAccountHistory = async () => {
-	const showFees = $('#fees_toggle').prop('checked');
-	const transactions = showFees
-		? await activeWallet.getTransactions()
-		: (await activeWallet.getTransactions()).filter(i => i.fee === '');
+$('.transfer_row-container .transfer_row-close-icon').click(e => {
+	e.target.parentNode.classList.toggle('transfer_row-closed');
+	$(e.target.parentNode.children[2]).toggle();
+});
 
-	console.log(transactions);
-	$('#acc_transfers #transfer_rows').empty();
+const getAccountHistory = async () => {
+	// $('#acc_transfers #transfer_rows').empty();
+	const showFees = $('#fees_toggle').prop('checked');
+	let transactions = (await activeWallet.getTransactions()).map(
+		({ amount, fee, recipient, block }) => ({
+			amount,
+			fee,
+			recipient,
+			timestamp: new Date(block.modified_date),
+			sender: block.sender,
+		})
+	);
+	transactions = showFees
+		? transactions
+		: transactions.filter(i => i.fee === '');
 	if (transactions.length !== 0) {
 		for (transaction of transactions) {
-			let timestamp = transaction.block.modified_date;
-			let date = new Date(timestamp);
-			timestamp =
-				date.getMonth() +
+			const timestamp =
+				transaction.timestamp.getMonth() +
 				1 +
 				'/' +
-				date.getDate() +
+				transaction.timestamp.getDate() +
 				'/' +
-				date.getFullYear();
+				transaction.timestamp.getFullYear();
 			const transactions_element = $(
 				`        <div class='transfer_row'><span class='transfer_date' title='${
-					transaction.block.modified_date
+					transaction.timestamp
 				}'>
           ${timestamp}
           </span><span class='transfer_val'>
           ${
-				transaction.block.sender ===
-				activeWallet.account.accountNumberHex
+				transaction.sender === activeWallet.account.accountNumberHex
 					? '-'
 					: '+'
 			} 
           ${transaction.amount}
           </span><span class='transfer_name' style="overflow: scroll; width: 100%;">
-          ${TO + transaction.recipient + '\n' + FROM + transaction.block.sender}
+          ${TO + transaction.recipient + '\n' + FROM + transaction.sender}
           </span></div>`
 			);
-			$('#acc_transfers #transfer_rows').append(transactions_element);
+			// $('#acc_transfers #transfer_rows').append(transactions_element);
 		}
 	} else
-		$('#acc_transfers #transfer_rows')
-			.eq(1)
-			.append(
-				`<div class="transfer_row">${NO_RECENT_TRANSACTIONS}</div>`
-			);
+		$('#acc_transfers #transfer_rows').append(
+			`<div class="transfer_row">${NO_RECENT_TRANSACTIONS}</div>`
+		);
 };
 
 $('#fees_toggle').click(getAccountHistory);

@@ -667,39 +667,34 @@ h3 {
 }
 
 .show-scroll::-webkit-scrollbar-thumb {
-	background: #ff1616;
+	background: var(--fg-primary);
 	width: 3px !important;
 }
 
-/* optional: show position indicator in red */
 .transfer_row {
-	padding: 11px 32px 11px 32px;
+	background: white;
 }
 
-.transfer_row:nth-child(odd) {
-	background-color: rgb(255 255 255);
+.transfer_row-container {
+	background: var(--alt-bg);
 }
 
-.transfer_row:nth-child(even) {
-	background-color: rgba(196, 196, 196, 0.32);
-}
-
-.transfer_row span {
+.transfer_row-container-heading {
 	display: inline-block;
+	margin-right: 160px;
+	margin-left: 32px;
+	color: black;
+	font-weight: 600;
+	font-size: medium;
 }
 
-.transfer_row span:nth-child(odd) {
-	width: 183px;
+.transfer_row-container .transfer_row-close-icon {
+	margin-right: 32px;
+	cursor: pointer;
 }
 
-.transfer_date,
-.transfer_val {
-	margin-bottom: 6px;
-}
-
-.transfer_row span:nth-child(even) {
-	width: 100px;
-	text-align: right;
+.transfer_row-closed .transfer_row-close-icon {
+	transform: rotate(90deg);
 }
 
 #settings_div {
