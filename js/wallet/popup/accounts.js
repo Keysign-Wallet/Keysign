@@ -30,7 +30,7 @@ const showUserData = async () => {
 
 $('.transfer_row-container .transfer_row-close-icon').click(e => {
 	e.target.parentNode.classList.toggle('transfer_row-closed');
-	$(e.target.parentNode.children[2]).toggle();
+	[...e.target.parentNode.children].splice(2).forEach(i => $(i).toggle());
 });
 
 const getAccountHistory = async () => {

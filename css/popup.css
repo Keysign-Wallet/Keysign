@@ -673,19 +673,52 @@ h3 {
 
 .transfer_row {
 	background: white;
+	padding: 10px 0 10px 32px;
+}
+
+.transfer_row img {
+	position: relative;
+	bottom: 42px;
+}
+
+.transfer_row-inner {
+	display: inline-block;
+	border-bottom: solid 1px var(--stroke);
+	width: 90%;
+}
+
+.transfer_row-inner p {
+	margin: 0;
+}
+
+.transfer_row-inner h3,
+.transfer_row-inner h4 {
+	margin: 0;
+	display: inline-block;
+}
+
+.transfer_row-inner h4 {
+	font-size: small;
+	font-weight: 200;
+}
+
+.transfer_row-inner h3 {
+	color: var(--fg-secondary);
+	margin-right: 100px;
 }
 
 .transfer_row-container {
 	background: var(--alt-bg);
+	margin-bottom: 2px;
 }
 
 .transfer_row-container-heading {
 	display: inline-block;
-	margin-right: 160px;
-	margin-left: 32px;
 	color: black;
 	font-weight: 600;
 	font-size: medium;
+	height: 24px;
+	margin: 4px 160px 4px 32px;
 }
 
 .transfer_row-container .transfer_row-close-icon {
