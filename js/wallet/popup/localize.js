@@ -140,12 +140,6 @@ $('#new_bank').attr(
 	chrome.i18n.getMessage('popup_html_bank_node')
 );
 $('#add_new_bank').text(chrome.i18n.getMessage('popup_html_add_bank'));
-
-// Add key
-$('#add_key_div .back_enabled').text(
-	chrome.i18n.getMessage('popup_html_add_key')
-);
-$('#add_key_div p').html(chrome.i18n.getMessage('popup_html_add_key_text'));
 $('#new_key').attr(
 	'placeholder',
 	chrome.i18n.getMessage('popup_html_private_key')

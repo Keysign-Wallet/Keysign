@@ -60,7 +60,7 @@ function showCustomBank() {
 					$('#custom_bank').append(
 						"<div><div class='pref_name'>" +
 							bank +
-							"</div><img class='deleteCustomBANK' src='../images/delete.png'/></div>"
+							"</div><img class='deleteCustomBANK' src='../assets/SVGs/clear.svg'/></div>"
 					);
 				}
 			}

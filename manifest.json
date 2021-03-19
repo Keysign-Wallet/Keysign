@@ -6,10 +6,10 @@
 	"permissions": ["storage", "idle"],
 	"browser_action": {
 		"default_popup": "html/popup.html",
-		"default_icon": "images/app-icon.png"
+		"default_icon": "assets/images/app-icon.png"
 	},
 	"icons": {
-		"128": "images/app-icon-128.png"
+		"128": "assets/images/app-icon-128.png"
 	},
 	"background": {
 		"scripts": [
@@ -30,7 +30,7 @@
 		"persistent": true
 	},
 	"web_accessible_resources": [
-		"/images/app-icon.png",
+		"/assets/images/app-icon.png",
 		"js/handshake/tnb_keysign.js"
 	],
 	"content_scripts": [
