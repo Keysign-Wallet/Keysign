@@ -34,7 +34,7 @@ $('.transfer_row-container .transfer_row-close-icon').click(e => {
 });
 
 const getAccountHistory = async () => {
-	// $('#acc_transfers #transfer_rows').empty();
+	$('#acc_transfers #transfer_rows').empty();
 	const showFees = $('#fees_toggle').prop('checked');
 	let transactions = (await activeWallet.getTransactions()).map(
 		({ amount, fee, recipient, block }) => ({
@@ -50,35 +50,67 @@ const getAccountHistory = async () => {
 		: transactions.filter(i => i.fee === '');
 	if (transactions.length !== 0) {
 		for (transaction of transactions) {
-			const timestamp =
-				transaction.timestamp.getMonth() +
-				1 +
-				'/' +
-				transaction.timestamp.getDate() +
-				'/' +
-				transaction.timestamp.getFullYear();
-			const transactions_element = $(
-				`        <div class='transfer_row'><span class='transfer_date' title='${
-					transaction.timestamp
-				}'>
-          ${timestamp}
-          </span><span class='transfer_val'>
-          ${
-				transaction.sender === activeWallet.account.accountNumberHex
-					? '-'
-					: '+'
-			} 
-          ${transaction.amount}
-          </span><span class='transfer_name' style="overflow: scroll; width: 100%;">
-          ${TO + transaction.recipient + '\n' + FROM + transaction.sender}
-          </span></div>`
-			);
-			// $('#acc_transfers #transfer_rows').append(transactions_element);
+			const date = transaction.timestamp.getDate();
+			const month = [
+				'JANUARY',
+				'FEBRUARY',
+				'MARCH',
+				'APRIL',
+				'MAR',
+				'JUNE',
+				'JULY',
+				'AUGUST',
+				'SEPTEMBER',
+				'OCTOBER',
+				'NOVEMBER',
+				'DECEMBER',
+			][transaction.timestamp.getMonth()];
+			const year = transaction.timestamp.getFullYear();
+
+			if (!$(`.${month}-${year}`).length)
+				$('#transfer_rows')
+					.append(`<div class="transfer_row-container ${month}-${year}">
+			<h3 class="transfer_row-container-heading">${month.toUpperCase()} ${year}</h3>
+			<img
+			src="../assets/SVGs/arrow-down.svg"
+			alt="arrow"
+			class="transfer_row-close-icon"
+			/>
+			</div>`);
+
+			const heading = $(`.${month}-${year}`);
+			heading.append(`<div class="transfer_row">
+			<img src="${
+				activeWallet.account.accountNumberHex === transaction.sender
+					? '../assets/SVGs/sent.svg'
+					: '../assets/SVGs/receive.svg'
+			}" alt="sent-icon" />
+			<div class="transfer_row-inner">
+				<h3>TNBC -${transaction.amount}</h3>
+				<h4>${date} ${month.substring(0, 3).toUpperCase()}</h4>
+				<p>Sent to:</p>
+				<p class='transfer_recipient'>${transaction.recipient}</p>
+			</div>
+		</div>`);
+			console.log(transaction, heading);
 		}
 	} else
 		$('#acc_transfers #transfer_rows').append(
 			`<div class="transfer_row">${NO_RECENT_TRANSACTIONS}</div>`
 		);
+
+	closeIcons = $('.transfer_row-close-icon');
+	for (var i = 0; i < closeIcons.length; i++) {
+		$(closeIcons[i]).unbind('click');
+		$(closeIcons[i]).click(e => {
+			e.target.parentNode.classList.toggle(
+				'transfer_row-container-closed'
+			);
+			[...e.target.parentNode.children]
+				.splice(2)
+				.forEach(i => $(i).toggle());
+		});
+	}
 };
 
 $('#fees_toggle').click(getAccountHistory);

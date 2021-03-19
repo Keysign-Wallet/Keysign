@@ -704,7 +704,13 @@ h3 {
 
 .transfer_row-inner h3 {
 	color: var(--fg-secondary);
-	margin-right: 100px;
+	width: 60vw;
+}
+
+.transfer_recipient {
+	font-size: smaller;
+	width: 80vw;
+	overflow: hidden;
 }
 
 .transfer_row-container {
@@ -726,7 +732,7 @@ h3 {
 	cursor: pointer;
 }
 
-.transfer_row-closed .transfer_row-close-icon {
+.transfer_row-container-closed .transfer_row-close-icon {
 	transform: rotate(90deg);
 }
 
