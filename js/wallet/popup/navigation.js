@@ -85,13 +85,6 @@ $('#back_forgot').click(function () {
 	else $('#unlock').show();
 });
 
-// Clicking back after "add key"
-$('#add_key_div .back_enabled').click(function () {
-	$('#add_key_div').hide();
-	$('#manage_keys').show();
-	$('.error_div').hide();
-});
-
 $('.back_account_types').click(() => {
 	$('#add_wallet_types_div').show();
 	$('#generate_wallet_account_div').hide();
@@ -135,7 +128,9 @@ $('#settings').click(function () {
 $('#about').click(function () {
 	$('#about_div').show();
 	$('#about_div h3').html(
-		chrome.runtime.getManifest().name + chrome.runtime.getManifest().version
+		`${chrome.runtime.getManifest().name} ${
+			chrome.runtime.getManifest().version
+		}`
 	);
 	$('#settings_div').hide();
 });
@@ -153,12 +148,14 @@ function manageWallets() {
 		$('#manage_keys .select-selected')[0].innerText
 	);
 	$('#accountNumber_key').text(selWallet.account.accountNumberHex);
+	console.log(selWallet.account.signingKeyHex);
 	const signingKey = $('#signingKey_manage');
-	signingKey.text('CLICK HERE TO REVEAL');
-	signingKey.click(() =>
+	const reveal = $('.reveal-sign');
+	signingKey.text('*'.repeat(selWallet.account.signingKeyHex.length));
+	reveal.click(() =>
 		signingKey.text(
 			signingKey.text() === selWallet.account.signingKeyHex
-				? 'CLICK HERE TO REVEAL'
+				? '*'.repeat(selWallet.account.signingKeyHex.length)
 				: selWallet.account.signingKeyHex
 		)
 	);
@@ -171,13 +168,9 @@ function manageWallets() {
 	const accountCopy = $('.copy-acn');
 	const signingKeyCopy = $('.copy-sign');
 	accountCopy.click(() => {
-		accountCopy.text('Copied!');
-		setTimeout(() => accountCopy.text('Copy'), 2000);
 		navigator.clipboard.writeText(selWallet.account.accountNumberHex);
 	});
 	signingKeyCopy.click(() => {
-		signingKeyCopy.text('Copied!');
-		setTimeout(() => signingKeyCopy.text('Copy'), 2000);
 		navigator.clipboard.writeText(selWallet.account.signingKeyHex);
 	});
 }
@@ -213,11 +206,6 @@ $('#clear').click(function () {
 	$('#back_forgot').attr('id', 'back_forgot_settings');
 });
 
-// Show add a new key
-$('#add_key').click(function () {
-	$('#add_key_div').show();
-});
-
 // Navigate to autolock menu
 $('#autolock').click(function () {
 	$('#settings_div').hide();
@@ -250,13 +238,16 @@ $('#history').click(function () {
 $('.input_img_right_eye').click(function () {
 	if ($('#unlock_pwd').prop('type') === 'password') {
 		$('#unlock_pwd').prop('type', 'text');
-		$('.input_img_right_eye').prop('src', '../images/icons8-eye-50.png');
+		$('.input_img_right_eye').prop(
+			'src',
+			'../assets/images/icons8-eye-50.png'
+		);
 		$('.input_img_right_eye').height('20.72px');
 	} else {
 		$('#unlock_pwd').prop('type', 'password');
 		$('.input_img_right_eye').prop(
 			'src',
-			'../images/icons8-invisible-50.png'
+			'../assets/images/icons8-invisible-50.png'
 		);
 		$('.input_img_right_eye').height('29.93px');
 	}

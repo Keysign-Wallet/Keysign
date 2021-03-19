@@ -2,32 +2,31 @@
 <html>
 	<head>
 		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/common.css" />
 		<link rel="stylesheet" type="text/css" href="../css/popup.css" />
 	</head>
 	<body>
 		<div id="register" class="hide-at-start">
-			<img src="../images/keysign.png" class="logo-white" />
+			<img src="../assets/SVGs/keysign-logo.svg" class="keysign-logo" />
+			<h1 id="register-heading">Keysign</h1>
 			<p></p>
 			<div class="input_container">
 				<input type="password" id="master_pwd" />
-				<img src="../images/icons8-lock-50.png" class="input_img" />
+				<img src="../assets/SVGs/lock.svg" class="input_img" />
 			</div>
 			<div class="input_container">
 				<input type="password" id="confirm_master_pwd" />
-				<img src="../images/icons8-lock-50.png" class="input_img" />
+				<img src="../assets/SVGs/lock.svg" class="input_img" />
 			</div>
 			<button id="submit_master_pwd"></button>
 		</div>
 		<div id="unlock" class="hide-at-start">
-			<img src="../images/keysign.png" class="logo-white" />
+			<img src="../assets/SVGs/keysign-logo.svg" class="keysign-logo" />
+			<h1 id="register-heading">Keysign</h1>
 			<p></p>
 			<div class="input_container">
 				<input type="password" id="unlock_pwd" />
-				<img src="../images/icons8-lock-50.png" class="input_img" />
-				<img
-					src="../images/icons8-eye-50.png"
-					class="input_img_right_eye"
-				/>
+				<img src="../assets/SVGs/lock.svg" class="input_img" />
 			</div>
 			<div class="input_container">
 				<button id="submit_unlock"></button>
@@ -43,13 +42,10 @@
 		<div class="success_div"></div>
 		<div id="main" class="hide-at-start">
 			<div class="main_header">
-				<img class="icon" src="../images/app-icon.png" />
+				<img class="icon" src="../assets/SVGs/keysign-logo.svg" />
 				<span>
-					<img
-						src="../images/icons8-lock-orientation-60.png"
-						id="lock"
-					/>
-					<img src="../images/icons8-settings-60.png" id="settings" />
+					<img src="../assets/SVGs/autolock-dark.svg" id="lock" />
+					<img src="../assets/SVGs/settings.svg" id="settings" />
 				</span>
 			</div>
 			<div class="custom-select custom-select-main wallets">
@@ -72,6 +68,21 @@
 		</div>
 		<div id="acc_transfers" class="hide-at-start">
 			<div class="back_menu back_enabled"></div>
+			<div class="key_checkbox toggle_fees">
+				<label
+					for="fees_toggle"
+					class="checkbox_container"
+					id="div_default"
+				>
+					<div class="fees_title">SHOW FEES</div>
+					<div class="fees_info">
+						Check box to show transaction fees in the wallet
+						history.
+					</div>
+					<input type="checkbox" checked="true" id="fees_toggle" />
+					<span class="checkmark" />
+				</label>
+			</div>
 			<div id="transfer_rows" class="show-scroll"></div>
 		</div>
 		<div id="add_wallet_types_div" class="settings_child hide-at-start">
@@ -86,10 +97,7 @@
 			<p></p>
 			<div class="input_container">
 				<input type="text" id="walletName" placeholder="Wallet Name" />
-				<img
-					src="../images/icons8-coin-wallet-50.png"
-					class="input_img"
-				/>
+				<img src="../assets/SVGs/wallet-grey.svg" class="input_img" />
 			</div>
 			<div class="input_container">
 				<input
@@ -97,7 +105,7 @@
 					id="signingKey"
 					placeholder="Signing Key"
 				/>
-				<img src="../images/icons8-key-50.png" class="input_img" />
+				<img src="../assets/SVGs/key.svg" class="input_img" />
 			</div>
 			<button id="check_add_wallet"></button>
 		</div>
@@ -109,10 +117,7 @@
 			<p></p>
 			<div class="input_container">
 				<input type="text" id="wallet_name" />
-				<img
-					src="../images/icons8-coin-wallet-50.png"
-					class="input_img"
-				/>
+				<img src="../assets/SVGs/wallet-grey.svg" class="input_img" />
 			</div>
 			<button id="add_wallet_generate_keys"></button>
 		</div>
@@ -120,35 +125,35 @@
 			<div class="back_enabled back_menu"></div>
 
 			<div class="setting_row" id="add_new_account">
-				<img src="../images/add_wallet.png" />
+				<img src="../assets/SVGs/add-wallet.svg" />
 				<span></span>
 			</div>
 			<div class="setting_row" id="manage">
-				<img src="../images/accounts.png" />
+				<img src="../assets/SVGs/wallet-grey.svg" />
 				<span></span>
 			</div>
 			<div class="setting_row" id="change_pwd">
-				<img src="../images/password.png" />
+				<img src="../assets/SVGs/lock.svg" />
 				<span></span>
 			</div>
 			<div class="setting_row" id="preferences">
-				<img src="../images/preferences.png" />
+				<img src="../assets/SVGs/prefs.svg" />
 				<span></span>
 			</div>
 			<div class="setting_row" id="autolock">
-				<img src="../images/autolock.png" />
+				<img src="../assets/SVGs/autolock.svg" />
 				<span></span>
 			</div>
 			<div class="setting_row" id="import_export">
-				<img src="../images/import.svg" />
+				<img src="../assets/SVGs/import-export.svg" />
 				<span></span>
 			</div>
 			<div class="setting_row" id="about">
-				<img src="../images/info.png" />
+				<img src="../assets/SVGs/mini-keysign-logo.svg" />
 				<span></span>
 			</div>
 			<div class="setting_row" id="clear">
-				<img src="../images/clear.png" />
+				<img src="../assets/SVGs/clear.svg" />
 				<span></span>
 			</div>
 		</div>
@@ -208,13 +213,14 @@
 					class="keys_info_type"
 					id="accountNumber_key_title"
 				></span>
-				<a class="copy-acn">Copy</a>
+				<a class="copy-acn"><img src="../assets/SVGs/copy.svg" /></a>
 				<span class="manage-key" id="accountNumber_key"></span>
 			</div>
 			<div class="keys_info">
 				<span class="keys_info_type" id="signingKey_title"></span>
-				<a class="copy-sign">Copy</a>
+				<a class="copy-sign"><img src="../assets/SVGs/copy.svg" /></a>
 				<span class="manage-key" id="signingKey_manage"></span>
+				<a class="reveal-sign"><img src="../assets/SVGs/eye.svg" /></a>
 			</div>
 			<button id="delete_account"></button>
 		</div>
@@ -235,15 +241,6 @@
 			<button id="add_new_bank"></button>
 			<div id="custom_bank"></div>
 		</div>
-		<div id="add_key_div" class="hide-at-start">
-			<div class="back_enabled"></div>
-			<p></p>
-			<div class="input_container">
-				<input type="password" id="new_key" />
-				<img src="../images/icon8-key-48.png" class="input_img" />
-			</div>
-			<button id="add_new_key"></button>
-		</div>
 		<div id="copied" class="hide-at-start">
 			<div></div>
 		</div>
@@ -253,15 +250,15 @@
 			<p></p>
 			<div class="input_container">
 				<input type="password" id="old_pwd" />
-				<img src="../images/icons8-lock-50.png" class="input_img" />
+				<img src="../assets/SVGs/lock.svg" class="input_img" />
 			</div>
 			<div class="input_container">
 				<input type="password" id="new_pwd" />
-				<img src="../images/icons8-lock-50.png" class="input_img" />
+				<img src="../assets/SVGs/lock.svg" class="input_img" />
 			</div>
 			<div class="input_container">
 				<input type="password" id="confirm_new_pwd" />
-				<img src="../images/icons8-lock-50.png" class="input_img" />
+				<img src="../assets/SVGs/lock.svg" class="input_img" />
 			</div>
 			<button id="confirm_change_pwd"></button>
 		</div>
@@ -274,18 +271,8 @@
 			<div id="send_form">
 				<div class="input_container">
 					<input id="recipient" />
-					<img
-						src="../images/icons8-hashtag-50.png"
-						class="input_img"
-					/>
 				</div>
-				<input type="number" id="amt_send" placeholder="0" />
-
-				<div class="custom-select" id="currency_send">
-					<select>
-						<option value="TNBC">TNBC</option>
-					</select>
-				</div>
+				<input type="number" id="amt_send" placeholder="AMOUNT" />
 				<h3 id="bank_fee"></h3>
 				<h3 id="val_fee"></h3>
 				<button id="send_transfer"></button>
@@ -293,17 +280,10 @@
 		</div>
 		<div id="confirm_send_div" class="hide-at-start">
 			<div class="back_enabled back_menu"></div>
-			<p></p>
-			<div id="transfer_warning"></div>
-			<h3></h3>
-			<div id="from_conf_transfer"></div>
-			<h3></h3>
-			<div id="to_conf_transfer"></div>
-			<h3></h3>
-			<div id="amt_conf_transfer"></div>
+			<div class="confirm_transfer_text"></div>
 			<button id="confirm_send_transfer"></button>
 			<div class="loader" id="send_loader" style="display: none">
-				<div><img src="../images/loading.gif" /></div>
+				<div><img src="../assets/images/loading.gif" /></div>
 			</div>
 		</div>
 

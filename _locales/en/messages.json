@@ -395,7 +395,7 @@
 		"description": "Generic button"
 	},
 	"popup_html_select_bank": {
-		"message": "Select an BANK node",
+		"message": "Select a BANK node",
 		"description": "on preferences"
 	},
 	"popup_html_send": {
@@ -503,6 +503,10 @@
 	"popup_signed_call": {
 		"message": "Signed Call",
 		"description": "On preferences, list of rights that were given to some websites."
+	},
+	"confirm_transfer_text": {
+		"message": "Please confirm your transfer of <strong>$1 TNBC</strong><br/>to<br/>$2<br/><br/><br/><br/>This cannot be undone.",
+		"description": "before sending a transfer"
 	},
 	"popup_transfer_success": {
 		"message": "Transfer successful!",
