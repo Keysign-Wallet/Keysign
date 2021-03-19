@@ -2,7 +2,7 @@
 	"name": "__MSG_keysign__",
 	"description": "__MSG_description__",
 	"default_locale": "en",
-	"version": "0.3.7",
+	"version": "0.4.0",
 	"permissions": ["storage", "idle"],
 	"browser_action": {
 		"default_popup": "html/popup.html",
@@ -39,5 +39,10 @@
 			"js": ["vendor/jquery.min.js", "js/handshake/web_interface.js"]
 		}
 	],
+	"browser_specific_settings": {
+  		"gecko": {
+    			"id": "4d9ea947-3901-432d-adfa-f7ab7d4f1daa",
+  		}
+	},
 	"manifest_version": 2
 }
