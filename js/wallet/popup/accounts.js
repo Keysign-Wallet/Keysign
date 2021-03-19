@@ -77,19 +77,21 @@ const getAccountHistory = async () => {
 			class="transfer_row-close-icon"
 			/>
 			</div>`);
+			const sent =
+				activeWallet.account.accountNumberHex === transaction.sender;
 
 			const heading = $(`.${month}-${year}`);
 			heading.append(`<div class="transfer_row">
 			<img src="${
-				activeWallet.account.accountNumberHex === transaction.sender
-					? '../assets/SVGs/sent.svg'
-					: '../assets/SVGs/receive.svg'
+				sent ? '../assets/SVGs/sent.svg' : '../assets/SVGs/receive.svg'
 			}" alt="sent-icon" />
 			<div class="transfer_row-inner">
-				<h3>TNBC -${transaction.amount}</h3>
+				<h3>TNBC ${sent ? '-' : '+'}${transaction.amount}</h3>
 				<h4>${date} ${month.substring(0, 3).toUpperCase()}</h4>
-				<p>Sent to:</p>
-				<p class='transfer_recipient'>${transaction.recipient}</p>
+				<p>${sent ? 'Sent To' : 'Received From'}</p>
+				<p class='transfer_recipient'>${
+					sent ? transaction.recipient : transaction.sender
+				}</p>
 			</div>
 		</div>`);
 			console.log(transaction, heading);
