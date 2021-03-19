@@ -1,4 +1,4 @@
-![Untitled design](https://user-images.githubusercontent.com/58412572/102975749-62114380-44b5-11eb-854b-1cdd505e80a5.png)
+![Untitled design](https://user-assets/images.githubusercontent.com/58412572/102975749-62114380-44b5-11eb-854b-1cdd505e80a5.png)
 
 Putting Wallet keys directly into websites is not safe or secure.
 
@@ -18,7 +18,7 @@ You can download and install the latest published version for the following brow
 Clone the repository by `git clone https://github.com/Keysign-Wallet/keysign.git` in the command line.
 
 -   Google Chrome: Open up `chrome://extensions` and make sure to toggle "Developer Mode" on. Click on `Load Unpacked Extension` and navigate to the cloned directory.
--   Firefox: Open `about:debugging` and go to "This Firefox". Click on `Load Temporary Addon` and navigate to the cloned directory. 
+-   Firefox: Open `about:debugging` and go to "This Firefox". Click on `Load Temporary Addon` and navigate to the cloned directory.
 
 ## Features
 

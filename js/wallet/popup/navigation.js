@@ -85,13 +85,6 @@ $('#back_forgot').click(function () {
 	else $('#unlock').show();
 });
 
-// Clicking back after "add key"
-$('#add_key_div .back_enabled').click(function () {
-	$('#add_key_div').hide();
-	$('#manage_keys').show();
-	$('.error_div').hide();
-});
-
 $('.back_account_types').click(() => {
 	$('#add_wallet_types_div').show();
 	$('#generate_wallet_account_div').hide();
@@ -213,11 +206,6 @@ $('#clear').click(function () {
 	$('#back_forgot').attr('id', 'back_forgot_settings');
 });
 
-// Show add a new key
-$('#add_key').click(function () {
-	$('#add_key_div').show();
-});
-
 // Navigate to autolock menu
 $('#autolock').click(function () {
 	$('#settings_div').hide();
@@ -250,13 +238,16 @@ $('#history').click(function () {
 $('.input_img_right_eye').click(function () {
 	if ($('#unlock_pwd').prop('type') === 'password') {
 		$('#unlock_pwd').prop('type', 'text');
-		$('.input_img_right_eye').prop('src', '../images/icons8-eye-50.png');
+		$('.input_img_right_eye').prop(
+			'src',
+			'../assets/images/icons8-eye-50.png'
+		);
 		$('.input_img_right_eye').height('20.72px');
 	} else {
 		$('#unlock_pwd').prop('type', 'password');
 		$('.input_img_right_eye').prop(
 			'src',
-			'../images/icons8-invisible-50.png'
+			'../assets/images/icons8-invisible-50.png'
 		);
 		$('.input_img_right_eye').height('29.93px');
 	}

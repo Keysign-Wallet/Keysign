@@ -30,7 +30,6 @@ h3 {
 #settings_div,
 .settings_child,
 #pref_div,
-#add_key_div,
 #change_password,
 #add_bank_div,
 #confirm_send_div,
@@ -154,7 +153,7 @@ h3 {
 }
 
 .back_enabled::before {
-	background-image: url('../images/icons8-left-50.png');
+	background-image: url('../assets/images/icons8-left-50.png');
 	background-size: 35px 30px;
 	background-repeat: no-repeat;
 	display: inline-block;
@@ -195,7 +194,6 @@ h3 {
 #forgot_div,
 #unlock,
 #register,
-#add_key_div,
 #add_wallet_div,
 #message_account_checked,
 #master_check,
@@ -880,16 +878,6 @@ h3 {
 #fake_input {
 	position: absolute;
 	left: -9999px;
-}
-
-#add_key_div p {
-	display: inline-block;
-	margin-top: 40px;
-	margin-bottom: 50px;
-}
-
-#add_key_div input {
-	padding-left: 65px;
 }
 
 .deletePref,
