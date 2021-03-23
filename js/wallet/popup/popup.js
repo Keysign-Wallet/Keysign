@@ -127,6 +127,7 @@ $('#submit_unlock').click(function () {
 $('#forgot_div button').click(function () {
 	walletsList.clear();
 	mk = null;
+	sendMk(mk);
 	chrome.storage.local.set({
 		bank_list: [defaultBank],
 		current_bank: defaultBank,
