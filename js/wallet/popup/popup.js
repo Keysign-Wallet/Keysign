@@ -127,6 +127,7 @@ $('#submit_unlock').click(function () {
 $('#forgot_div button').click(function () {
 	walletsList.clear();
 	mk = null;
+	sendMk(mk);
 	chrome.storage.local.set({
 		bank_list: [defaultBank],
 		current_bank: defaultBank,
@@ -138,16 +139,17 @@ $('#forgot_div button').click(function () {
 
 // Registration confirmation
 $('#submit_master_pwd').click(function () {
-	if (acceptMP($('#master_pwd').val())) {
-		if ($('#master_pwd').val() === $('#confirm_master_pwd').val()) {
-			mk = $('#master_pwd').val();
-			sendMk(mk);
-			initializeMainMenu();
-			$('.error_div').hide();
-		} else {
-			showError(chrome.i18n.getMessage('popup_password_mismatch'));
-		}
-	} else {
+	if (
+		$('#master_pwd').val() === $('#confirm_master_pwd').val() &&
+		acceptMP($('#master_pwd').val())
+	) {
+		mk = $('#master_pwd').val();
+		sendMk(mk);
+		initializeMainMenu();
+		$('.error_div').hide();
+	} else if ($('#master_pwd').val() !== $('#confirm_master_pwd').val()) {
+		showError(chrome.i18n.getMessage('popup_password_mismatch'));
+	} else if (!acceptMP($('#master_pwd').val())) {
 		$('.error_div').css('height', '100px');
 		showError(chrome.i18n.getMessage('popup_password_regex'));
 	}
