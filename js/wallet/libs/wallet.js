@@ -51,7 +51,6 @@ class Wallet {
 		const data = await paymentHandler
 			.sendCoins(recipient, parseInt(amount))
 			.catch(err => callback(err));
-		console.log(data);
 		callback(undefined, data);
 	}
 
