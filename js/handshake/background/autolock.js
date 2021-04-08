@@ -6,7 +6,7 @@ const startAutolock = async autoLock => {
 		autoLock.type !== 'default' &&
 		(autoLock.type === 'locked' || autoLock.type === 'idle')
 	) {
-		chrome.idle.setDetectionInterval(parseInt(autoLock.mn) * 60);
+		chrome.idle.setDetectionInterval(autoLock.mn * 60);
 		chrome.idle.onStateChanged.addListener(state => {
 			switch (true) {
 				case autoLock.type === 'locked' && state === 'locked':
