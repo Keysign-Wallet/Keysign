@@ -94,7 +94,6 @@ const getAccountHistory = async () => {
 				}</p>
 			</div>
 		</div>`);
-			console.log(transaction, heading);
 		}
 	} else
 		$('#acc_transfers #transfer_rows').append(

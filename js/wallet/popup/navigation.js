@@ -148,7 +148,6 @@ function manageWallets() {
 		$('#manage_keys .select-selected')[0].innerText
 	);
 	$('#accountNumber_key').text(selWallet.account.accountNumberHex);
-	console.log(selWallet.account.signingKeyHex);
 	const signingKey = $('#signingKey_manage');
 	const reveal = $('.reveal-sign');
 	signingKey.text('*'.repeat(selWallet.account.signingKeyHex.length));
