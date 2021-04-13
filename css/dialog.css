@@ -109,9 +109,6 @@ button {
 	display: none;
 }
 
-#modal-body-msg {
-}
-
 #modal-body-msg .msg-data {
 	max-height: 285px;
 	overflow-y: scroll;
@@ -138,6 +135,10 @@ button {
 	line-height: 16px;
 	text-transform: uppercase;
 	margin: 0 0 5px 0;
+}
+
+#memo {
+	text-transform: none !important;
 }
 
 #modal-body-msg .msg-data div {

@@ -50,7 +50,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResp) {
 			// Display confirmation window
 			$('#confirm_footer').show();
 			$('#modal-body-msg').show();
-			const { type, display_msg, amount, to, bank } = request.data;
+			const { type, display_msg, amount, to, bank, memo } = request.data;
 
 			const titles = {
 				transfer: chrome.i18n.getMessage('dialog_title_transfer'),
@@ -92,6 +92,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResp) {
 					showBalances(walletsList.getList()[0], amount);
 					$('#to').text(`${to}`);
 					$('#amount').text(`${amount} TNBC`);
+					$('#memo').text(`Memo: ${memo}`);
 					break;
 				case 'verify':
 					$('#acct_list').show();

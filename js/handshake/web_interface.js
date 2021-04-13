@@ -94,7 +94,11 @@ const validate = req => {
 	if (req && req.type) {
 		switch (req.type) {
 			case 'transfer':
-				return req.amount > 0 && req.to.length >= 64;
+				return (
+					req.amount > 0 &&
+					req.to.length >= 64 &&
+					validateMemo(req.memo)
+				);
 				break;
 			case 'verify':
 				return (
@@ -105,3 +109,7 @@ const validate = req => {
 		}
 	}
 };
+
+function validateMemo(memo) {
+	return memo.length <= 64 && /^[a-zA-Z0-9_ ]*$/.test(memo);
+}
