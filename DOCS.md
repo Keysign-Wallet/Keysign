@@ -20,7 +20,9 @@ The `requestHandshake` method takes in one parameter which is the callback.
 
 The second method on the keysign object is `requestTransfer`. It is used to send coins to a specified account.
 
-It takes 4 arguments, `to`: the account number to send coins to, `amount`: the number of coins to send,
+It takes 5 arguments, `to`: the account number to send coins to, `amount`: the number of coins to send,
+
+`memo`: Optional memo for the transaction,
 
 `callback`: the callback and `bank`: the url of bank to use (optional)
 
@@ -28,6 +30,7 @@ It takes 4 arguments, `to`: the account number to send coins to, `amount`: the n
 tnb_keysign.requestTransfer(
 	'fakeAccountNumber',
 	10,
+	'',
 	res => console.log(res),
 	' http://54.177.121.3'
 );
