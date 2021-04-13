@@ -231,6 +231,21 @@ h3 {
 	background: var(--stroke);
 }
 
+.memo_checkbox {
+	display: block;
+	margin-bottom: 10px;
+	height: 20px;
+}
+
+.memo_checkbox h3 {
+	color: var(--text-primary);
+}
+
+#send_memo {
+	display: none;
+	padding-left: 30px !important;
+}
+
 /* The container */
 .checkbox_container {
 	display: block;
@@ -273,6 +288,11 @@ h3 {
 	border-radius: 4px;
 	background-color: white;
 	border: solid 1px black;
+}
+
+.memo_checkmark {
+	top: 0px;
+	left: 10px;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -593,7 +613,6 @@ h3 {
 }
 
 .transfer_balance {
-	margin: 25px -32px 25px -32px;
 	padding: 18px 0px 15.21px 0px;
 	background-color: rgba(255, 255, 255, 0.2);
 	box-sizing: border-box;
@@ -961,10 +980,6 @@ h3 {
 .no_cursor {
 	cursor: default !important;
 	pointer-events: none;
-}
-
-#send_transfer:hover {
-	background-color: #ff1616 !important;
 }
 
 #total_outgoing,

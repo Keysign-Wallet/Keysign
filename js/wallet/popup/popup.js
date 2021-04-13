@@ -64,6 +64,18 @@ function sendAutolock() {
 	});
 }
 
+// memo
+$('.memo_checkbox').click(function () {
+	$('.memo_checkbox input').prop(
+		'checked',
+		!$('.memo_checkbox input').prop('checked')
+	);
+	$('#send_memo').css(
+		'display',
+		$('.memo_checkbox input').prop('checked') ? 'inherit' : 'none'
+	);
+});
+
 // Save autolock
 $('.autolock').click(function () {
 	$('.autolock input').prop('checked', false);
@@ -209,7 +221,15 @@ function initializeMainMenu(options) {
 $('#send_transfer').click(function () {
 	const to = $('#recipient').val();
 	const amount = $('#amt_send').val();
-	if (to !== '' && to.length >= 64 && amount !== '' && amount > 0)
+	const memo = $('#send_memo').val();
+	console.log(memo);
+	if (
+		to !== '' &&
+		to.length >= 64 &&
+		amount !== '' &&
+		amount > 0 &&
+		validateMemo(memo || '')
+	)
 		confirmTransfer();
 	else {
 		showError(chrome.i18n.getMessage('popup_accounts_fill'));
@@ -218,12 +238,17 @@ $('#send_transfer').click(function () {
 	}
 });
 
+function validateMemo(memo) {
+	return memo.length <= 64 && /^[a-zA-Z0-9_ ]*$/.test(memo);
+}
+
 function confirmTransfer() {
 	const to = $('#recipient').val();
 	const amount = $('#amt_send').val();
+	const memo = $('#send_memo').val();
 	$('#amt_conf_transfer').text(amount + ' ' + 'TNBC');
 	$('.confirm_transfer_text').html(
-		chrome.i18n.getMessage('confirm_transfer_text', [amount, to])
+		chrome.i18n.getMessage('confirm_transfer_text', [amount, to, memo])
 	);
 	$('#send_div').hide();
 	$('#confirm_send_div').show();
@@ -238,23 +263,29 @@ $('#confirm_send_transfer').click(function () {
 async function sendTransfer() {
 	const to = $('#recipient').val().replace(' ', '');
 	const amount = $('#amt_send').val();
-	await activeWallet.sendTransaction(to, parseInt(amount), (err, result) => {
-		$('#send_loader').hide();
-		$('#confirm_send_transfer').show();
-		if (err == null) {
-			$('#confirm_send_div').hide();
-			$('#send_div').show();
-			$('.error_div').hide();
-			$('.success_div')
-				.html(chrome.i18n.getMessage('popup_transfer_success'))
-				.show();
-			setTimeout(function () {
+	const memo = $('#send_memo').val();
+	await activeWallet.sendTransaction(
+		to,
+		parseInt(amount),
+		memo,
+		(err, result) => {
+			$('#send_loader').hide();
+			$('#confirm_send_transfer').show();
+			if (err == null) {
+				$('#confirm_send_div').hide();
+				$('#send_div').show();
+				$('.error_div').hide();
+				$('.success_div')
+					.html(chrome.i18n.getMessage('popup_transfer_success'))
+					.show();
+				setTimeout(function () {
+					$('.success_div').hide();
+				}, 5000);
+			} else {
 				$('.success_div').hide();
-			}, 5000);
-		} else {
-			$('.success_div').hide();
-			showError(chrome.i18n.getMessage('unknown_error'));
+				showError(chrome.i18n.getMessage('unknown_error'));
+			}
+			$('#send_transfer').show();
 		}
-		$('#send_transfer').show();
-	});
+	);
 }

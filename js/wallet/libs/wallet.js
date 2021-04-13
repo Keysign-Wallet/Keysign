@@ -41,7 +41,7 @@ class Wallet {
 		return transactions.data.results;
 	}
 
-	async sendTransaction(recipient, amount, callback) {
+	async sendTransaction(recipient, amount, memo, callback) {
 		await this.init();
 		const paymentHandler = new tnb.AccountPaymentHandler({
 			account: this.account,
@@ -49,7 +49,7 @@ class Wallet {
 		});
 		await paymentHandler.init();
 		const data = await paymentHandler
-			.sendCoins(recipient, parseInt(amount))
+			.sendCoins(recipient, parseInt(amount), memo)
 			.catch(err => callback(err));
 		callback(undefined, data);
 	}
