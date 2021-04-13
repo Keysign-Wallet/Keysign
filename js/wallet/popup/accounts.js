@@ -37,12 +37,13 @@ const getAccountHistory = async () => {
 	$('#acc_transfers #transfer_rows').empty();
 	const showFees = $('#fees_toggle').prop('checked');
 	let transactions = (await activeWallet.getTransactions()).map(
-		({ amount, fee, recipient, block }) => ({
+		({ amount, fee, recipient, block, memo }) => ({
 			amount,
 			fee,
 			recipient,
 			timestamp: new Date(block.modified_date),
 			sender: block.sender,
+			memo,
 		})
 	);
 	transactions = showFees
@@ -92,6 +93,9 @@ const getAccountHistory = async () => {
 				<p class='transfer_recipient'>${
 					sent ? transaction.recipient : transaction.sender
 				}</p>
+				${transaction.memo === '' ? '' : '<p>Memo:</p>'}
+				${transaction.memo === '' ? '' : '<p>' + transaction.memo + '</p>'}
+				<p>
 			</div>
 		</div>`);
 		}
