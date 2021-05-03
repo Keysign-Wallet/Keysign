@@ -1,4 +1,4 @@
-![Untitled design](https://user-assets/images.githubusercontent.com/58412572/102975749-62114380-44b5-11eb-854b-1cdd505e80a5.png)
+![Untitled design](https://i.imgur.com/HWHU2Pt.png)
 
 Putting Wallet keys directly into websites is not safe or secure.
 
