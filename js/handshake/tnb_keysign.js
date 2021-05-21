@@ -22,7 +22,7 @@ const tnb_keysign = {
 	 * @param {string} bank optional bank to use
 	 * @param {string} code optional code for verification
 	 */
-	requestTransfer: function (to, amount, memo, callback, bank, code) {
+	requestTransfer: function (to, amount, memo, callback, bank, code = '') {
 		const request = {
 			type: 'transfer',
 			to,
@@ -40,7 +40,7 @@ const tnb_keysign = {
 	 * @param {function} callback keysign's response to the request
 	 * @param {string} code optional code for verification
 	 */
-	requestVerify: function (accountNumber, callback, code) {
+	requestVerify: function (accountNumber, callback, code = '') {
 		const request = {
 			type: 'verify',
 			accountNumber,

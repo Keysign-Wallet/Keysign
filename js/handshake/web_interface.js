@@ -97,13 +97,14 @@ const validate = req => {
 				return (
 					req.amount > 0 &&
 					req.to.length >= 64 &&
+					typeof req.code === 'string' &&
 					validateMemo(req.memo)
 				);
 				break;
 			case 'verify':
 				return (
 					(req.accountNumber && req.accountNumber.length >= 64) ||
-					!req.accountNumber
+					(typeof req.code === 'string' && !req.accountNumber)
 				);
 				break;
 		}
