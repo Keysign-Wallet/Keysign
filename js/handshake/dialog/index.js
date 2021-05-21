@@ -50,7 +50,8 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResp) {
 			// Display confirmation window
 			$('#confirm_footer').show();
 			$('#modal-body-msg').show();
-			const { type, display_msg, amount, to, bank, memo } = request.data;
+			const { type, display_msg, amount, to, bank, memo, code } =
+				request.data;
 
 			const titles = {
 				transfer: chrome.i18n.getMessage('dialog_title_transfer'),
@@ -112,6 +113,11 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResp) {
 						data: {
 							...request.data,
 							from: $('.select-selected').text(),
+							sig: walletsList
+								.getByAccountNumber(
+									$('.select-selected').text()
+								)
+								.account.createSignature(code),
 						},
 						tab: request.tab,
 						domain: request.domain,
@@ -122,34 +128,43 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResp) {
 						walletsList.getByAccountNumber(
 							$('#verify_ac').text()
 						) === walletsList.get($('.select-selected').text())
-					)
+					) {
+						let accountNumber = request.data.accountNumber
+							? undefined
+							: $('#verify_ac').text();
 						chrome.runtime.sendMessage({
 							command: 'acceptVerification',
 							data: {
 								...request.data,
 								result: {
 									verified: true,
-									accountNumber: request.data.accountNumber
-										? undefined
-										: $('#verify_ac').text(),
+									accountNumber,
+									sig: walletsList
+										.getByAccountNumber(accountNumber)
+										.account.createSignature(code),
 								},
 							},
 							tab: request.tab,
 							domain: request.domain,
 						});
-					else
+					} else {
+						let accountNumber = request.data.accountNumber;
 						chrome.runtime.sendMessage({
 							command: 'acceptVerification',
 							data: {
 								...request.data,
 								result: {
 									verified: false,
-									accountNumber: request.data.accountNumber,
+									accountNumber,
+									sig: walletsList
+										.getByAccountNumber(accountNumber)
+										.account.createSignature(code),
 								},
 							},
 							tab: request.tab,
 							domain: request.domain,
 						});
+					}
 				}
 				$('#confirm_footer').hide();
 				$('#modal-body-msg').hide();
@@ -214,17 +229,19 @@ function initiateCustomSelect(data, walletsList) {
 				/*when an item is clicked, update the original select box,
 				and the selected item:*/
 				let y, i, k, s, h;
-				s = this.parentNode.parentNode.getElementsByTagName(
-					'select'
-				)[0];
+				s =
+					this.parentNode.parentNode.getElementsByTagName(
+						'select'
+					)[0];
 				h = this.parentNode.previousSibling;
 				for (i = 0; i < s.length; i++) {
 					if (s.options[i].innerHTML === this.innerHTML) {
 						s.selectedIndex = i;
 						h.innerHTML = this.innerHTML;
-						y = this.parentNode.getElementsByClassName(
-							'same-as-selected'
-						);
+						y =
+							this.parentNode.getElementsByClassName(
+								'same-as-selected'
+							);
 						for (k = 0; k < y.length; k++) {
 							y[k].removeAttribute('class');
 						}

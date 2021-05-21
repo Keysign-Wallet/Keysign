@@ -19,14 +19,17 @@ const tnb_keysign = {
 	 * @param {String} to TNB accountNumber to receive the transfer
 	 * @param {String} amount Amount to be transfered.
 	 * @param {function} callback keysign's response to the request
+	 * @param {string} bank optional bank to use
+	 * @param {string} code optional code for verification
 	 */
-	requestTransfer: function (to, amount, memo, callback, bank) {
+	requestTransfer: function (to, amount, memo, callback, bank, code) {
 		const request = {
 			type: 'transfer',
 			to,
 			amount,
 			memo,
 			bank,
+			code,
 		};
 		this.dispatchCustomEvent('swRequest_tnb', request, callback);
 	},
@@ -35,11 +38,13 @@ const tnb_keysign = {
 	 * Requests verification
 	 * @param {String} accountNumber TNB accountNumber to verify
 	 * @param {function} callback keysign's response to the request
+	 * @param {string} code optional code for verification
 	 */
-	requestVerify: function (accountNumber, callback) {
+	requestVerify: function (accountNumber, callback, code) {
 		const request = {
 			type: 'verify',
 			accountNumber,
+			code,
 		};
 		this.dispatchCustomEvent('swRequest_tnb', request, callback);
 	},
