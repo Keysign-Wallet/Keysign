@@ -24,7 +24,7 @@ It takes 5 arguments, `to`: the account number to send coins to, `amount`: the n
 
 `memo`: Optional memo for the transaction,
 
-`callback`: the callback and `bank`: the url of bank to use (optional)
+`callback`: the callback and `bank`: the url of bank to use (optional) and `code`: any text to be used for signature verification (optional)
 
 ```js
 tnb_keysign.requestTransfer(
@@ -33,6 +33,7 @@ tnb_keysign.requestTransfer(
 	'',
 	res => console.log(res),
 	' http://54.177.121.3'
+	'randomly generated one time code'
 );
 ```
 
@@ -42,7 +43,7 @@ The third method on the keysign object is `requestVerify`. It is used to verify 
 
 This can be useful for keysign logins on websites.
 
-It takes 2 parameters, `accountNumber`: The account number to check (can be an empty string to receive an account of user's choice), and `callback`: the callback.
+It takes 2 parameters, `accountNumber`: The account number to check (can be an empty string to receive an account of user's choice), and `callback`: the callback, `code`: any text to be used for signature verification (optional)
 
 ```js
 tnb_keysign.requestVerify('fakeAccountNumber', res => console.log(res));
