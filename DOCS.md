@@ -32,7 +32,7 @@ tnb_keysign.requestTransfer(
 	10,
 	'',
 	res => console.log(res),
-	' http://54.177.121.3'
+	'http://54.177.121.3'
 	'randomly generated one time code'
 );
 ```
