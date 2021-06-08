@@ -295,3 +295,14 @@ button {
 	margin-top: 20px;
 	font-weight: bold;
 }
+
+th,
+td {
+	text-align: center;
+	padding-right: 14px;
+	border-bottom: #dfdfdf 1px solid;
+}
+
+table {
+	width: max-content;
+}
