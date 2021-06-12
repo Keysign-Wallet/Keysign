@@ -50,8 +50,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResp) {
 			// Display confirmation window
 			$('#confirm_footer').show();
 			$('#modal-body-msg').show();
-			const { type, display_msg, amount, to, bank, memo, code } =
-				request.data;
+			const { type, display_msg, txs, bank, code } = request.data;
 
 			const titles = {
 				transfer: chrome.i18n.getMessage('dialog_title_transfer'),
@@ -90,12 +89,17 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResp) {
 					if (bank) {
 						walletsList.changeBank(bank);
 					}
-					showBalances(walletsList.getList()[0], amount);
-					$('#to').text(`${to}`);
-					$('#amount').text(`${amount} TNBC`);
-					$('#memo').text(`Memo: ${memo}`);
+					$('.balance_loading').hide();
+					txs.forEach(tx => {
+						$('#transfer_info').append(
+							`<tr><td>${tx.amount}</td><td>${
+								tx.to.substring(0, 10) + '...'
+							}</td><td>${tx.memo}</td></tr>`
+						);
+					});
 					break;
 				case 'verify':
+					$('table').hide();
 					$('#acct_list').show();
 					$('#verify_ac').show();
 					$('#verify_ac').text(
@@ -114,9 +118,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResp) {
 							...request.data,
 							from: $('.select-selected').text(),
 							sig: walletsList
-								.getByAccountNumber(
-									$('.select-selected').text()
-								)
+								.get($('.select-selected').text())
 								.account.createSignature(code),
 						},
 						tab: request.tab,
@@ -192,18 +194,6 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResp) {
 	}
 });
 
-const showBalances = async (wallet, amount) => {
-	let balance = 0;
-	let tx = 0;
-	balance = await wallet.getBalance();
-	tx = await wallet.getTxFees();
-	$('#balance').text(`${balance}  TNBC`).show();
-	$('#amount').text(`Amount: ${amount}  TNBC`).show();
-	$('#tx_fees_val').text(`Validator Fee: ${tx.val_fee}  TNBC`).show();
-	$('#tx_fees_bank').text(`Bank Fee: ${tx.bank_fee}  TNBC`).show();
-	$('.balance_loading').hide();
-};
-
 function initiateCustomSelect(data, walletsList) {
 	/*look for any elements with the class "custom-select":*/
 	let prev_username = null;
@@ -266,7 +256,7 @@ function initiateCustomSelect(data, walletsList) {
 				$('#username').text(username);
 				switch (data.type) {
 					case 'transfer':
-						showBalances(walletsList.get(username), data.amount);
+						$('.balance_loading').hide();
 					case 'verify':
 						if (!data.accountNumber)
 							$('#verify_ac').text(

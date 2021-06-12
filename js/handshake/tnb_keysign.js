@@ -16,18 +16,15 @@ const tnb_keysign = {
 
 	/**
 	 * Requests a transfer
-	 * @param {String} to TNB accountNumber to receive the transfer
-	 * @param {String} amount Amount to be transfered.
+	 * @param {Array} txs Array of transactions to process {to: "accountNumber", amount: 1, memo: "hi"}
 	 * @param {function} callback keysign's response to the request
 	 * @param {string} bank optional bank to use
 	 * @param {string} code optional code for verification
 	 */
-	requestTransfer: function (to, amount, memo, callback, bank, code = '') {
+	requestTransfer: function (txs, callback, bank, code = '') {
 		const request = {
 			type: 'transfer',
-			to,
-			amount,
-			memo,
+			txs,
 			bank,
 			code,
 		};

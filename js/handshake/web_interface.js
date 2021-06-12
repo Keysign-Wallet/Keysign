@@ -94,12 +94,7 @@ const validate = req => {
 	if (req && req.type) {
 		switch (req.type) {
 			case 'transfer':
-				return (
-					req.amount > 0 &&
-					req.to.length >= 64 &&
-					typeof req.code === 'string' &&
-					validateMemo(req.memo)
-				);
+				return validateTxs(req.txs) && typeof req.code === 'string';
 				break;
 			case 'verify':
 				return (
@@ -110,6 +105,19 @@ const validate = req => {
 		}
 	}
 };
+
+function validateTxs(txs) {
+	try {
+		txs.forEach(tx => {
+			if (tx.amount < 1 || tx.to.length < 64 || !validateMemo(tx.memo)) {
+				return false;
+			}
+		});
+		return true;
+	} catch (error) {
+		return false;
+	}
+}
 
 function validateMemo(memo) {
 	return memo.length <= 64 && /^[a-zA-Z0-9_ ]*$/.test(memo);
