@@ -265,9 +265,7 @@ async function sendTransfer() {
 	const amount = $('#amt_send').val();
 	const memo = $('#send_memo').val();
 	await activeWallet.sendTransaction(
-		to,
-		parseInt(amount),
-		memo,
+		[{ to, amount: parseInt(amount), memo }],
 		(err, result) => {
 			$('#send_loader').hide();
 			$('#confirm_send_transfer').show();

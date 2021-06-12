@@ -45,29 +45,23 @@ const performTransaction = async (data, tab, no_confirm) => {
 const broadcastTransfer = data => {
 	return new Promise(async resolve => {
 		const wallet = walletsList.get(data.from);
-		wallet.sendTransaction(
-			data.to,
-			data.amount,
-			data.memo || '',
-			(err, result) => {
-				let message = createMessage(
-					err,
-					result,
-					data,
-					chrome.i18n.getMessage('hs_bgd_transfer_success', [
-						data.amount,
-						wallet.account.accountNumberHex,
-						data.to,
-					]),
-					chrome.i18n.getMessage('hs_bgd_error_broadcasting', [
-						data.amount,
-						wallet.account.accountNumberHex,
-						data.to,
-					])
-				);
-				resolve(message);
-			}
-		);
+		wallet.sendTransaction(data.txs, (err, result) => {
+			let message = createMessage(
+				err,
+				result,
+				data,
+				chrome.i18n.getMessage('hs_bgd_transfer_success', [
+					data.amount,
+					wallet.account.accountNumberHex,
+				]),
+				chrome.i18n.getMessage('hs_bgd_error_broadcasting', [
+					data.amount,
+					wallet.account.accountNumberHex,
+					data.to,
+				])
+			);
+			resolve(message);
+		});
 	});
 };
 

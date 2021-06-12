@@ -118,9 +118,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResp) {
 							...request.data,
 							from: $('.select-selected').text(),
 							sig: walletsList
-								.getByAccountNumber(
-									$('.select-selected').text()
-								)
+								.get($('.select-selected').text())
 								.account.createSignature(code),
 						},
 						tab: request.tab,

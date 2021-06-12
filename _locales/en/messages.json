@@ -36,7 +36,7 @@
 		"message": "Cannot find account $1."
 	},
 	"hs_bgd_transfer_success": {
-		"message": "Successfully transferred $1 TNBC <br/><br/> From:<br/> <span style=\"overflow: scroll; display: block;\">$2</span> <br/> To: <br/> <span style=\"overflow: scroll; display: block;\">$3</span>"
+		"message": "Successfully transferred $1 TNBC <br/><br/> From:<br/> <span style=\"overflow: scroll; display: block;\">$2</span>"
 	},
 	"hs_bgd_verify_error": {
 		"message": "Account number don't match selected wallet signing key."

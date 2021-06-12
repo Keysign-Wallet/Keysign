@@ -41,15 +41,21 @@ class Wallet {
 		return transactions.data.results;
 	}
 
-	async sendTransaction(recipient, amount, memo, callback) {
+	async sendTransaction(txs, callback) {
 		await this.init();
 		const paymentHandler = new tnb.AccountPaymentHandler({
 			account: this.account,
 			bankUrl: this.bank.url,
 		});
 		await paymentHandler.init();
+		txs = txs.map(tx => ({
+			amount: tx.amount,
+			memo: tx.memo,
+			recipient: tx.to,
+		}));
+		txs = txs.sort((a, b) => (a.recipient > b.recipient ? 1 : -1));
 		const data = await paymentHandler
-			.sendCoins(recipient, parseInt(amount), memo)
+			.sendBulkTransactions(txs)
 			.catch(err => callback(err));
 		callback(undefined, data);
 	}
