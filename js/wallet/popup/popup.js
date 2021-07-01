@@ -4,7 +4,7 @@ let custom_created = false;
 let manageKey,
 	getPref = false;
 let walletsList = new WalletsList();
-let defaultBank = 'http://54.177.121.3';
+let defaultBank = 'http://13.233.77.254';
 
 /**
  * Temporary workaround for secondary monitors on MacOS where redraws don't happen
