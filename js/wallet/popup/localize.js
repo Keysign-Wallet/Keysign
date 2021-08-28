@@ -66,8 +66,8 @@ $('#change_pwd span').text(
 );
 $('#preferences span').text(chrome.i18n.getMessage('popup_html_pref'));
 $('#autolock span').text(chrome.i18n.getMessage('popup_html_autolock'));
-$('#import_export span').text(
-	chrome.i18n.getMessage('popup_html_import_export')
+$('#sync_import_export span').text(
+	chrome.i18n.getMessage('popup_html_sync_import_export')
 );
 $('#about span').text(chrome.i18n.getMessage('popup_html_about'));
 $('#clear span').text(chrome.i18n.getMessage('popup_html_clear'));
@@ -96,10 +96,10 @@ $('#save_autolock').text(chrome.i18n.getMessage('popup_html_save'));
 
 // Import / Export
 $('#import_settings .back_enabled').text(
-	chrome.i18n.getMessage('popup_html_import_export')
+	chrome.i18n.getMessage('popup_html_sync_import_export')
 );
 $('#import_settings p').html(
-	chrome.i18n.getMessage('popup_html_import_export_text')
+	chrome.i18n.getMessage('popup_html_sync_import_export_text')
 );
 $('#import_settings button')
 	.eq(0)

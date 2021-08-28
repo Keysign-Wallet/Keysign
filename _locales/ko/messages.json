@@ -36,7 +36,7 @@
 		"message": "Cannot find account $1."
 	},
 	"hs_bgd_transfer_success": {
-		"message": "Successfully transferred $1 TNBC <br/><br/> From:<br/> <span style=\"overflow: scroll; display: block;\">$2</span> <br/> To: <br/> <span style=\"overflow: scroll; display: block;\">$3</span>"
+		"message": "Successfully transferred $1 TNBC <br/><br/> From:<br/> <span style=\"overflow: scroll; display: block;\">$2</span>"
 	},
 	"hs_bgd_verify_error": {
 		"message": "Account number don't match selected wallet signing key."
@@ -148,7 +148,7 @@
 		"description": "when trying to add a wallet already saved on keysign"
 	},
 	"popup_accounts_fill": {
-		"message": "Please fill the fields.",
+		"message": "Please fill the fields properly.",
 		"description": "when adding new wallet but not filling all fields"
 	},
 	"popup_accounts_incorrect_key": {
@@ -322,13 +322,13 @@
 		"message": "Import",
 		"description": "on import / export settings"
 	},
-	"popup_html_import_export": {
-		"message": "Import / Export",
+	"popup_html_sync_import_export": {
+		"message": "Sync / Import / Export",
 		"description": "on settings page"
 	},
-	"popup_html_import_export_text": {
+	"popup_html_sync_import_export_text": {
 		"message": "You can export all your keys encrypted in a file. This will allow you to import them to keysign on another device or simply safeguard them.<br/><br/>When importing, only accounts that are not already present on the instance will be added.",
-		"description": "on import / export settings"
+		"description": "on Sync / import / export settings"
 	},
 	"popup_html_import_key": {
 		"message": "Import Key",
@@ -395,7 +395,7 @@
 		"description": "Generic button"
 	},
 	"popup_html_select_bank": {
-		"message": "Select an BANK node",
+		"message": "Select a BANK node",
 		"description": "on preferences"
 	},
 	"popup_html_send": {
@@ -503,6 +503,10 @@
 	"popup_signed_call": {
 		"message": "Signed Call",
 		"description": "On preferences, list of rights that were given to some websites."
+	},
+	"confirm_transfer_text": {
+		"message": "Please confirm your transfer of <strong>$1 TNBC</strong><br/>to<br/>$2<br/><br/><br/><br/>This cannot be undone.<br/>Memo:<br/>$3",
+		"description": "before sending a transfer"
 	},
 	"popup_transfer_success": {
 		"message": "Transfer successful!",

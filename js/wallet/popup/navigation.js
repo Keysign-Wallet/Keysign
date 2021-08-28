@@ -211,7 +211,7 @@ $('#autolock').click(function () {
 	$('#autolock_div').show();
 });
 
-$('#import_export').click(function () {
+$('#sync_import_export').click(function () {
 	$('#settings_div').hide();
 	$('#import_settings').show();
 });
