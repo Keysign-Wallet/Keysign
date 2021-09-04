@@ -4,7 +4,7 @@ let custom_created = false;
 let manageKey,
 	getPref = false;
 let walletsList = new WalletsList();
-let defaultBank = 'http://45.33.60.42';
+let defaultBank = 'https://bank.keysign.app';
 
 /**
  * Temporary workaround for secondary monitors on MacOS where redraws don't happen
