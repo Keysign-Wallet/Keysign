@@ -21,6 +21,16 @@ $('#import_keys').click(() => {
 	importKeys();
 });
 
+$('#sync_keys').click(() => {
+	syncKeys();
+});
+
+const syncKeys = () => {
+	console.log('hi');
+	$('#import_settings').hide();
+	$('#sync').show();
+};
+
 const importKeys = () => {
 	chrome.windows.getCurrent(w => {
 		const win = {

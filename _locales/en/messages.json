@@ -306,6 +306,10 @@
 		"message": "Export",
 		"description": "on import / export settings"
 	},
+	"popup_html_sync": {
+		"message": "Sync",
+		"description": "on sync settings"
+	},
 	"popup_html_forgot": {
 		"message": "Forgot Password?",
 		"description": "On unlock page"

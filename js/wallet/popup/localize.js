@@ -103,9 +103,12 @@ $('#import_settings p').html(
 );
 $('#import_settings button')
 	.eq(0)
-	.html(chrome.i18n.getMessage('popup_html_import'));
+	.html(chrome.i18n.getMessage('popup_html_sync'));
 $('#import_settings button')
 	.eq(1)
+	.html(chrome.i18n.getMessage('popup_html_import'));
+$('#import_settings button')
+	.eq(2)
 	.html(chrome.i18n.getMessage('popup_html_export'));
 
 //about

@@ -1095,6 +1095,10 @@ h3 {
 	margin-top: 20px;
 }
 
+#import_settings button:nth-of-type(2) {
+	margin-bottom: 30px;
+}
+
 .preferences-site-container {
 	background-color: rgba(196, 196, 196, 0.32);
 	width: 100%;
@@ -1133,4 +1137,8 @@ input[type='checkbox'] {
 	color: #ff1616;
 	font-size: 18px;
 	font-weight: bold;
+}
+
+#sync {
+	display: none;
 }
