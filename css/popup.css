@@ -34,7 +34,8 @@ h3 {
 #add_bank_div,
 #confirm_send_div,
 #add_wallet_types_div,
-#generate_wallet_account_div {
+#generate_wallet_account_div,
+#sync {
 	scrollbar-width: none;
 	width: 350px;
 	height: 100%;
@@ -1141,4 +1142,26 @@ input[type='checkbox'] {
 
 #sync {
 	display: none;
+}
+
+#sync_guide_text {
+	font-weight: 400;
+	line-height: normal;
+	font-size: small;
+	color: #798183;
+}
+
+#sync_warning_1 {
+	color: #ffffff;
+	background-color: #fc7b7b;
+	font-size: small;
+	font-weight: 700;
+	line-height: normal;
+	padding: 10px 30px;
+	margin: 0 -32px 20px -32px;
+}
+
+#sync_qr_code {
+	height: 250px;
+	margin-left: 20px;
 }

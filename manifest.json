@@ -18,6 +18,7 @@
 			"js/wallet/libs/encrypt.js",
 			"vendor/tnb.min.js",
 			"vendor/jquery.min.js",
+			"vendor/qrcode.js",
 			"js/wallet/libs/wallet.js",
 			"js/wallet/libs/walletsList.js",
 			"js/handshake/background/autolock.js",
@@ -40,9 +41,9 @@
 		}
 	],
 	"browser_specific_settings": {
-  		"gecko": {
-    			"id": "{4d9ea947-3901-432d-adfa-f7ab7d4f1daa}"
-  		}
+		"gecko": {
+			"id": "{4d9ea947-3901-432d-adfa-f7ab7d4f1daa}"
+		}
 	},
 	"manifest_version": 2
 }
