@@ -180,6 +180,11 @@ $('.back_menu').click(function () {
 	initializeVisibility();
 });
 
+$('.back_import').click(() => {
+	$('#sync').hide();
+	$('#import_settings').show();
+});
+
 // Click on the change password option of the settings
 $('#change_pwd').click(function () {
 	$('#settings_div').hide();

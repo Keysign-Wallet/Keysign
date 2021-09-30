@@ -26,6 +26,11 @@ function switchBank(bank) {
 	chrome.storage.local.set({
 		current_bank: bank,
 	});
+	chrome.storage.local.get(['bank_list'], res => {
+		bank_list = res.bank_list.filter(item => item != bank);
+		bank_list.unshift(bank);
+		chrome.storage.local.set({ bank_list });
+	});
 }
 
 function addNewBank(bank) {

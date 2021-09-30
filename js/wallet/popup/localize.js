@@ -103,9 +103,23 @@ $('#import_settings p').html(
 );
 $('#import_settings button')
 	.eq(0)
-	.html(chrome.i18n.getMessage('popup_html_import'));
+	.html(chrome.i18n.getMessage('popup_html_sync'));
+$('#import_settings p').html(
+	chrome.i18n.getMessage('popup_html_import_export_text')
+);
+$('#sync .back_enabled').html(chrome.i18n.getMessage('popup_html_sync'));
+$('#sync_guide_text').html(
+	'You can add all your wallets to your Keysign mobile wallet. Open the "settings" tab and click to the "SYNC / IMPORT / EXPORT tab" in your keysign mobile wallet'
+);
+$('#sync_warning_1').html(
+	'ON CLICKING SYNC IT WILL DISPLAY A QR THAT SHOULD NOT BE SEEN BY ANYONE OTHER THAN YOU. KEYSIGN WILL NEVER ASK YOU TO SHARE YOUR SCREEN WHEN ON THIS PAGE OR ASK FOR YOU QR EVER.'
+);
+$('#submit_sync').html('Submit');
 $('#import_settings button')
 	.eq(1)
+	.html(chrome.i18n.getMessage('popup_html_import'));
+$('#import_settings button')
+	.eq(2)
 	.html(chrome.i18n.getMessage('popup_html_export'));
 
 //about

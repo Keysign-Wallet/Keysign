@@ -195,6 +195,7 @@
 		<div id="import_settings" class="settings_child hide-at-start">
 			<div class="back_enabled back_pref"></div>
 			<p></p>
+			<button id="sync_keys"></button>
 			<button id="import_keys"></button>
 			<button id="export_keys"></button>
 		</div>
@@ -297,11 +298,27 @@
 			</div>
 		</div>
 
+		<div id="sync" class="hide-at-start">
+			<div class="back_enabled back_import"></div>
+			<p id="sync_guide_text"></p>
+			<p id="sync_warning_1"></p>
+			<div class="input_container">
+				<input type="password" id="sync_pwd" />
+				<img src="../assets/SVGs/lock.svg" class="input_img" />
+			</div>
+			<img alt="qr_code" class="hide-at-start" id="sync_qr_code" />
+			<div class="input_container">
+				<button id="submit_sync"></button>
+			</div>
+			<a href="#" id="forgot"></a>
+		</div>
+
 		<script src="../vendor/jquery.min.js"></script>
 		<script src="../vendor/tnb.min.js"></script>
 		<script src="../vendor/md5.min.js"></script>
 		<script src="../vendor/crypto-js.js"></script>
 		<script src="../vendor/axios.min.js"></script>
+		<script src="../vendor/qrcode.js"></script>
 		<script src="../js/wallet/libs/encrypt.js"></script>
 		<script src="../js/wallet/libs/wallet.js"></script>
 		<script src="../js/wallet/libs/walletsList.js"></script>

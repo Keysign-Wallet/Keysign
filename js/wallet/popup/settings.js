@@ -21,6 +21,45 @@ $('#import_keys').click(() => {
 	importKeys();
 });
 
+$('#sync_keys').click(() => {
+	syncKeys();
+});
+
+const syncKeys = () => {
+	$('#import_settings').hide();
+	$('#sync').show();
+};
+
+$('#submit_sync').click(() => {
+	if (mk == $('#sync_pwd').val()) {
+		obj = {};
+		walletsList.wallets.list.forEach(i => {
+			obj[i.name] = i.account.signingKeyHex;
+		});
+		var qr = qrcode(0, 'L');
+		qr.addData(JSON.stringify(obj));
+		qr.make();
+		qrImg = qr.createDataURL();
+		$('#sync_guide_text').hide();
+		$('#sync_pwd').hide();
+		$('#sync img').hide();
+		$('#sync_warning_1').text(
+			'Make sure no one is in the room when you have this page open. Also make sure you are not sharing screens.'
+		);
+		$('#submit_sync').text('Done');
+		$('#sync_qr_code').show().attr('src', qrImg);
+		$('#submit_sync').click(() => {
+			$('#sync_guide_text').show();
+			$('#sync_pwd').show();
+			$('#submit_sync').text('Submit');
+			$('#sync_warning_1').text(
+				'ON CLICKING SYNC IT WILL DISPLAY A QR THAT SHOULD NOT BE SEEN BY ANYONE OTHER THAN YOU. KEYSIGN WILL NEVER ASK YOU TO SHARE YOUR SCREEN WHEN ON THIS PAGE OR ASK FOR YOU QR EVER.'
+			);
+			$('#sync_qr_code').hide();
+		});
+	}
+});
+
 const importKeys = () => {
 	chrome.windows.getCurrent(w => {
 		const win = {
