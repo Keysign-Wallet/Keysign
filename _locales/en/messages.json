@@ -326,13 +326,13 @@
 		"message": "Import",
 		"description": "on import / export settings"
 	},
-	"popup_html_import_export": {
-		"message": "Import / Export",
+	"popup_html_sync_import_export": {
+		"message": "Sync / Import / Export",
 		"description": "on settings page"
 	},
-	"popup_html_import_export_text": {
+	"popup_html_sync_import_export_text": {
 		"message": "You can export all your keys encrypted in a file. This will allow you to import them to keysign on another device or simply safeguard them.<br/><br/>When importing, only accounts that are not already present on the instance will be added.",
-		"description": "on import / export settings"
+		"description": "on Sync / import / export settings"
 	},
 	"popup_html_import_key": {
 		"message": "Import Key",
