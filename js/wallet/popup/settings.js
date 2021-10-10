@@ -43,15 +43,22 @@ $('#submit_sync').click(() => {
 		$('#sync_guide_text').hide();
 		$('#sync_pwd').hide();
 		$('#sync img').hide();
-		$('#sync_warning_1').text(
+		$('#sync_warning_1').hide();
+		$('#sync_warning_2').text(
 			'Make sure no one is in the room when you have this page open. Also make sure you are not sharing screens.'
 		);
-		$('#submit_sync').text('Done');
+		$('#submit_sync').hide();
+		$('#done_sync').show();
+		$('#done_sync').text('Done');
 		$('#sync_qr_code').show().attr('src', qrImg);
-		$('#submit_sync').click(() => {
+		$('#done_sync').click(() => {
 			$('#sync_guide_text').show();
 			$('#sync_pwd').show();
-			$('#submit_sync').text('Submit');
+			$('#sync img').show();
+			$('#sync_warning_2').hide();
+			$('#sync_warning_1').show();
+			$('#done_sync').hide();
+			$('#submit_sync').show();
 			$('#sync_warning_1').text(
 				'ON CLICKING SYNC IT WILL DISPLAY A QR THAT SHOULD NOT BE SEEN BY ANYONE OTHER THAN YOU. KEYSIGN WILL NEVER ASK YOU TO SHARE YOUR SCREEN WHEN ON THIS PAGE OR ASK FOR YOU QR EVER.'
 			);
