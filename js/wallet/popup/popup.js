@@ -218,23 +218,32 @@ function initializeMainMenu(options) {
 	);
 }
 // Show Confirmation window before transfer
-$('#send_transfer').click(function () {
+$('#send_transfer').click(async function () {
 	const to = $('#recipient').val();
 	const amount = $('#amt_send').val();
 	const memo = $('#send_memo').val();
-	console.log(memo);
-	if (
-		to !== '' &&
-		to.length >= 64 &&
-		amount !== '' &&
-		amount > 0 &&
-		validateMemo(memo || '')
-	)
-		confirmTransfer();
-	else {
-		showError(chrome.i18n.getMessage('popup_accounts_fill'));
+	var fees = await activeWallet.getTxFees();
+	fees = fees.bank_fee + fees.val_fee;
+	const bal = await activeWallet.getBalance();
+	console.log(bal, fees);
+	if (fees + parseInt(amount) > (await activeWallet.getBalance())) {
 		$('#send_loader').hide();
 		$('#send_transfer').show();
+		showError('You do not have enough funds to make this transaction!');
+	} else {
+		if (
+			to !== '' &&
+			to.length >= 64 &&
+			amount !== '' &&
+			amount > 0 &&
+			validateMemo(memo || '')
+		)
+			confirmTransfer();
+		else {
+			showError(chrome.i18n.getMessage('popup_accounts_fill'));
+			$('#send_loader').hide();
+			$('#send_transfer').show();
+		}
 	}
 });
 
