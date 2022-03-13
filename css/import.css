@@ -27,6 +27,10 @@
 	color: var(--fg-secondary);
 	font-weight: 600;
 }
+#proceed:hover{
+	background-color: var(--fg-primary)!important;
+	color: var(--bg-primary)!important;
+}
 
 #file {
 	width: 0.1px;
@@ -45,7 +49,7 @@
 	text-align: center;
 	padding: 9px 0 0 0;
 	position: relative;
-	font-size: 20px;
+	font-size: 15px;
 	line-height: 28px;
 	color: var(--bg-primary);
 	font-family: Futura;

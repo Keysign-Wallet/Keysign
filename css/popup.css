@@ -770,6 +770,10 @@ h3 {
 	vertical-align: middle;
 	cursor: pointer;
 	background: var(--alt-bg);
+	transition: 0.3s;
+}
+.setting_row:hover{
+	background: var(--stroke);
 }
 
 #settings_div div:first-of-type {
@@ -1087,9 +1091,14 @@ h3 {
 	margin-top: 30px;
 }
 
-#add_wallet_types_div p {
+#add_wallet_types_div p , #add_wallet_div p, #generate_wallet_account_div p{
 	margin-top: 20px;
+    background: #f3f6fa;
+    border: solid 1px var(--fg-primary);
+    padding: 9px;
+    border-radius: 5px;
 }
+
 
 #import_settings button:first-of-type {
 	margin-bottom: 30px;
