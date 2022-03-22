@@ -218,7 +218,7 @@ $('#add_generate_keys').text(
 $('#add_import_keys').text(chrome.i18n.getMessage('popup_html_import_keys'));
 
 $('#add_wallet_types_div p').html(
-	chrome.i18n.getMessage('popup_html_chose_add_method')
+	chrome.i18n.getMessage('popup_html_choose_add_method')
 );
 $('#add_wallet_types_div .back_enabled').text(
 	chrome.i18n.getMessage('popup_html_setup')

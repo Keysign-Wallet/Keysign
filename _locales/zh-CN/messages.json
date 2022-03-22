@@ -279,10 +279,10 @@
 		"description": "on settings page"
 	},
 	"popup_html_change_password_text": {
-		"message": "Input your old password for confirmation, then chose a new password.",
+		"message": "Input your old password for confirmation, then choose a new password.",
 		"description": "on change password"
 	},
-	"popup_html_chose_add_method": {
+	"popup_html_choose_add_method": {
 		"message": "You can add your keys by entering a Account Number and Signing key.<br/>Alternatives include Generating a Wallet or importing your keys.",
 		"description": "Text when adding new method."
 	},
