@@ -28,7 +28,7 @@ It takes 4 arguments, `txs`: an array of transactions to process - {to: "account
 leap_keysign.requestTransfer(
     {to: "accountNumber", amount: 1, memo: "hi"},
 	res => console.log(res),
-	'http://54.177.121.3'
+	'http://54.177.121.3',
 	'randomly generated one time code'
 );
 ```
