@@ -268,7 +268,7 @@ $('#add_new_bank').click(function () {
 			}, 5000);
 		} else {
 			try {
-				new tnb.Bank($('#new_bank').val());
+				new leap.Bank($('#new_bank').val());
 				addNewBank($('#new_bank').val());
 			} catch (error) {
 				$('.success_div')

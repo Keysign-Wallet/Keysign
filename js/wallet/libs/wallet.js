@@ -6,14 +6,14 @@ class Wallet {
 
 	async init() {
 		this.bank = this.bankUrl
-			? new tnb.Bank(this.bankUrl)
+			? new leap.Bank(this.bankUrl)
 			: await new Promise(resolve => {
 					chrome.storage.local.get(['current_bank'], items => {
-						resolve(new tnb.Bank(items.current_bank));
+						resolve(new leap.Bank(items.current_bank));
 					});
 			  });
 		const { primary_validator } = await this.bank.getConfig();
-		this.pv = new tnb.PrimaryValidator(
+		this.pv = new leap.PrimaryValidator(
 			`${primary_validator.protocol}://${primary_validator.ip_address}${
 				primary_validator.port === null
 					? ''
@@ -43,7 +43,7 @@ class Wallet {
 
 	async sendTransaction(txs, callback) {
 		await this.init();
-		const paymentHandler = new tnb.AccountPaymentHandler({
+		const paymentHandler = new leap.AccountPaymentHandler({
 			account: this.account,
 			bankUrl: this.bank.url,
 		});

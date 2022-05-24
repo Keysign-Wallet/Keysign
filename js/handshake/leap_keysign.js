@@ -1,7 +1,7 @@
 /**
- * Use the `tnb_keysign` methods listed below to issue requests to the TNB blockchain.
+ * Use the `leap_keysign` methods listed below to issue requests to the LEAP blockchain.
  */
-const tnb_keysign = {
+const leap_keysign = {
 	current_id: 1,
 	requests: {},
 	handshake_callback: null,
@@ -11,7 +11,7 @@ const tnb_keysign = {
 	 */
 	requestHandshake: function (callback) {
 		this.handshake_callback = callback;
-		this.dispatchCustomEvent('swHandshake_tnb', '');
+		this.dispatchCustomEvent('swHandshake_leap', '');
 	},
 
 	/**
@@ -28,12 +28,12 @@ const tnb_keysign = {
 			bank,
 			code,
 		};
-		this.dispatchCustomEvent('swRequest_tnb', request, callback);
+		this.dispatchCustomEvent('swRequest_leap', request, callback);
 	},
 
 	/**
 	 * Requests verification
-	 * @param {String} accountNumber TNB accountNumber to verify
+	 * @param {String} accountNumber LEAP accountNumber to verify
 	 * @param {function} callback keysign's response to the request
 	 * @param {string} code optional code for verification
 	 */
@@ -43,7 +43,7 @@ const tnb_keysign = {
 			accountNumber,
 			code,
 		};
-		this.dispatchCustomEvent('swRequest_tnb', request, callback);
+		this.dispatchCustomEvent('swRequest_leap', request, callback);
 	},
 
 	// Send the customEvent
@@ -70,24 +70,24 @@ window.addEventListener(
 		// We only accept messages from ourselves
 		if (event.source !== window) return;
 
-		if (event.data.type && event.data.type === 'tnb_keysign_response') {
+		if (event.data.type && event.data.type === 'leap_keysign_response') {
 			const response = event.data.response;
 			if (response && response.request_id) {
-				if (tnb_keysign.requests[response.request_id]) {
-					tnb_keysign.requests[response.request_id](response);
-					delete tnb_keysign.requests[response.request_id];
+				if (leap_keysign.requests[response.request_id]) {
+					leap_keysign.requests[response.request_id](response);
+					delete leap_keysign.requests[response.request_id];
 				}
 			}
 		} else if (
 			event.data.type &&
-			event.data.type === 'tnb_keysign_handshake'
+			event.data.type === 'leap_keysign_handshake'
 		) {
-			if (tnb_keysign.handshake_callback) {
-				tnb_keysign.handshake_callback();
+			if (leap_keysign.handshake_callback) {
+				leap_keysign.handshake_callback();
 			}
 		}
 	},
 	false
 );
 
-window.tnb_keysign = tnb_keysign;
+window.leap_keysign = leap_keysign;

@@ -186,7 +186,7 @@ $('#send_div .back_enabled').text(
 	chrome.i18n.getMessage('popup_html_transfer_funds')
 );
 $('.send_max').text(chrome.i18n.getMessage('popup_html_send_max'));
-$('#balance').text(chrome.i18n.getMessage('popup_html_balance', ['TNBC']));
+$('#balance').text(chrome.i18n.getMessage('popup_html_balance', ['LEAP']));
 $('#loading_balance').text(chrome.i18n.getMessage('popup_html_loading'));
 $('#recipient').attr(
 	'placeholder',

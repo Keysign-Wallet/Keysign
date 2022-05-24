@@ -4,31 +4,31 @@ let req = null;
 const setupInjection = () => {
 	try {
 		const scriptTag = document.createElement('script');
-		scriptTag.src = chrome.runtime.getURL('js/handshake/tnb_keysign.js');
+		scriptTag.src = chrome.runtime.getURL('js/handshake/leap_keysign.js');
 		const container = document.head || document.documentElement;
 		container.insertBefore(scriptTag, container.children[0]);
 	} catch (e) {
-		console.error('TNB Keysign injection failed.', e);
+		console.error('LEAP Keysign injection failed.', e);
 	}
 };
 setupInjection();
 
 // Answering the handshakes
-document.addEventListener('swHandshake_tnb', function (request) {
+document.addEventListener('swHandshake_leap', function (request) {
 	const req = JSON.stringify(request.detail);
 	if (request.detail.extension)
 		chrome.runtime.sendMessage(request.detail.extension, req);
 	else
 		window.postMessage(
 			{
-				type: 'tnb_keysign_handshake',
+				type: 'leap_keysign_handshake',
 			},
 			window.location.origin
 		);
 });
 
 // Answering the requests
-document.addEventListener('swRequest_tnb', function (request) {
+document.addEventListener('swRequest_leap', function (request) {
 	const prevReq = req;
 	req = request.detail;
 	// If all information are filled, send the request to the background, if not notify an error
@@ -82,7 +82,7 @@ const sendResponse = response => {
 	} else {
 		window.postMessage(
 			{
-				type: 'tnb_keysign_response',
+				type: 'leap_keysign_response',
 				response,
 			},
 			window.location.origin

@@ -90,20 +90,20 @@ function initiateCustomSelect(options) {
 				!getPref &&
 				!manageKey &&
 				!this.classList.contains('select-arrow-active') &&
-				this.innerHTML !== 'TNBC'
+				this.innerHTML !== 'LEAP'
 			) {
 				chrome.storage.local.set({
 					last_account: this.innerHTML,
 				});
 				loadWallet(this.innerHTML, options);
-			} else if (this.innerHTML === 'TNBC') {
+			} else if (this.innerHTML === 'LEAP') {
 				const balance =
 					(await activeWallet.getBalance()) -
 					(await activeWallet.getTxFees());
 				$('.transfer_balance div')
 					.eq(0)
 					.text(
-						chrome.i18n.getMessage('popup_html_balance', ['TNBC'])
+						chrome.i18n.getMessage('popup_html_balance', ['LEAP'])
 					);
 				$('.transfer_balance div')
 					.eq(1)

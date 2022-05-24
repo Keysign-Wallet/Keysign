@@ -87,7 +87,7 @@ const getAccountHistory = async () => {
 				sent ? '../assets/SVGs/sent.svg' : '../assets/SVGs/receive.svg'
 			}" alt="sent-icon" />
 			<div class="transfer_row-inner">
-				<h3>TNBC ${sent ? '-' : '+'}${transaction.amount}</h3>
+				<h3>LEAP ${sent ? '-' : '+'}${transaction.amount}</h3>
 				<h4>${date} ${month.substring(0, 3).toUpperCase()}</h4>
 				<p>${sent ? 'Sent To' : 'Received From'}</p>
 				<p class='transfer_recipient'>${
@@ -130,7 +130,7 @@ $('#add_wallet_generate_keys').click(async () => {
 					walletName,
 				])
 			);
-		} else addWallet(walletName, new tnb.Account().signingKeyHex);
+		} else addWallet(walletName, new leap.Account().signingKeyHex);
 	} else showError(FILL);
 });
 
@@ -145,7 +145,7 @@ $('#check_add_wallet').click(function () {
 				])
 			);
 		}
-		const account = new tnb.Account(signingKey);
+		const account = new leap.Account(signingKey);
 		addWallet(walletName, account.signingKeyHex);
 	} else {
 		showError(FILL);
