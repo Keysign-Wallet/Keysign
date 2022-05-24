@@ -2,7 +2,7 @@
 	"name": "__MSG_keysign__",
 	"description": "__MSG_description__",
 	"default_locale": "en",
-	"version": "0.5.1",
+	"version": "0.5.2",
 	"permissions": ["storage", "idle"],
 	"browser_action": {
 		"default_popup": "html/popup.html",
@@ -16,7 +16,7 @@
 			"vendor/crypto-js.js",
 			"vendor/md5.min.js",
 			"js/wallet/libs/encrypt.js",
-			"vendor/tnb.min.js",
+			"vendor/leap.min.js",
 			"vendor/jquery.min.js",
 			"vendor/qrcode.js",
 			"js/wallet/libs/wallet.js",
@@ -32,7 +32,7 @@
 	},
 	"web_accessible_resources": [
 		"/assets/images/app-icon.png",
-		"js/handshake/tnb_keysign.js"
+		"js/handshake/leap_keysign.js"
 	],
 	"content_scripts": [
 		{

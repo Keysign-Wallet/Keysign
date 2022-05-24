@@ -17,9 +17,9 @@ async function loadBank() {
 	);
 
 	initiateCustomSelect();
-	$('#currency_send select').children('option:first').text('TNBC');
-	$('#currency_send select').children('option:first').val('TNBC');
-	$('#wallet_currency .wallet_currency').eq(0).text('TNBC');
+	$('#currency_send select').children('option:first').text('LEAP');
+	$('#currency_send select').children('option:first').val('LEAP');
+	$('#wallet_currency .wallet_currency').eq(0).text('LEAP');
 }
 
 function switchBank(bank) {

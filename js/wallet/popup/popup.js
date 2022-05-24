@@ -255,7 +255,7 @@ function confirmTransfer() {
 	const to = $('#recipient').val();
 	const amount = $('#amt_send').val();
 	const memo = $('#send_memo').val();
-	$('#amt_conf_transfer').text(amount + ' ' + 'TNBC');
+	$('#amt_conf_transfer').text(amount + ' ' + 'LEAP');
 	$('.confirm_transfer_text').html(
 		chrome.i18n.getMessage('confirm_transfer_text', [amount, to, memo])
 	);

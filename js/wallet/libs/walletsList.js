@@ -6,7 +6,7 @@ class WalletsList {
 		if (wallets) {
 			this.wallets.list = wallets.list.map(
 				({ name, signingKey }) =>
-					new Wallet(name, new tnb.Account(signingKey))
+					new Wallet(name, new leap.Account(signingKey))
 			);
 			this.wallets.hash = wallets.hash;
 
@@ -55,7 +55,7 @@ class WalletsList {
 		for (const wallet of wallets) {
 			if (!this.wallets.list.find(acc => acc.name === wallet.name))
 				this.wallets.list.push(
-					new Wallet(wallet.name, new tnb.Account(wallet.signingKey))
+					new Wallet(wallet.name, new leap.Account(wallet.signingKey))
 				);
 		}
 		this.save(mk);
@@ -73,7 +73,7 @@ class WalletsList {
 	add(wallet) {
 		if (!this.wallets.list) this.wallets.list = [];
 		this.wallets.list.push(
-			new Wallet(wallet.name, new tnb.Account(wallet.signingKey))
+			new Wallet(wallet.name, new leap.Account(wallet.signingKey))
 		);
 		return this;
 	}

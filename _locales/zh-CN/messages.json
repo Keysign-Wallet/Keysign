@@ -36,7 +36,7 @@
 		"message": "Cannot find account $1."
 	},
 	"hs_bgd_transfer_success": {
-		"message": "Successfully transferred $1 TNBC <br/><br/> From:<br/> <span style=\"overflow: scroll; display: block;\">$2</span>"
+		"message": "Successfully transferred $1 LEAP <br/><br/> From:<br/> <span style=\"overflow: scroll; display: block;\">$2</span>"
 	},
 	"hs_bgd_verify_error": {
 		"message": "Account number don't match selected wallet signing key."
@@ -45,7 +45,7 @@
 		"message": "Verified!"
 	},
 	"description": {
-		"message": "Secure TNB Wallet Extension.",
+		"message": "Secure LEAPCHAIN Wallet Extension.",
 		"description": "Extension description, as shown in the store."
 	},
 	"dialog_amount": {
@@ -196,7 +196,7 @@
 		"description": "on settings page"
 	},
 	"popup_html_about_text": {
-		"message": "Keysign is an extension browser wallet created to work with <a href=\"https://www.thenewboston.com\" target=\"_blank\">TheNewBoston Blockchain</a> <br><br> It was developed and designed by both <a href=\"https://github.com/mrbusysky\" target=\"_blank\">MrSky</a> and <a href=\"https://github.com/AbhayAysola\" target=\"_blank\">Abhay</a>.",
+		"message": "Keysign is an extension browser wallet created to work with <a href=\"https://github.com/LeapChain\" target=\"_blank\">LEAPCHAIN Blockchain</a> <br><br> It was developed and designed by both <a href=\"https://github.com/mrbusysky\" target=\"_blank\">MrSky</a> and <a href=\"https://github.com/AbhayAysola\" target=\"_blank\">Abhay</a>.",
 		"description": "on about keysign"
 	},
 	"popup_html_accountNumber": {
@@ -268,7 +268,7 @@
 	},
 	"popup_html_balance": {
 		"message": "$1 Balance",
-		"description": "When initiating a TNBC transfer. $1 is a variable that will be replaced by a currency name."
+		"description": "When initiating a LEAP transfer. $1 is a variable that will be replaced by a currency name."
 	},
 	"popup_html_bank_node": {
 		"message": "BANK Node",
@@ -279,10 +279,10 @@
 		"description": "on settings page"
 	},
 	"popup_html_change_password_text": {
-		"message": "Input your old password for confirmation, then chose a new password.",
+		"message": "Input your old password for confirmation, then choose a new password.",
 		"description": "on change password"
 	},
-	"popup_html_chose_add_method": {
+	"popup_html_choose_add_method": {
 		"message": "You can add your keys by entering a Account Number and Signing key.<br/>Alternatives include Generating a Wallet or importing your keys.",
 		"description": "Text when adding new method."
 	},
@@ -305,6 +305,10 @@
 	"popup_html_export": {
 		"message": "Export",
 		"description": "on import / export settings"
+	},
+	"popup_html_sync": {
+		"message": "Sync",
+		"description": "on sync settings"
 	},
 	"popup_html_forgot": {
 		"message": "Forgot Password?",
@@ -339,12 +343,12 @@
 		"description": "Import all keys"
 	},
 	"popup_html_import_success": {
-		"message": "Import successful! <br><br>Please select the Keys you wish to store with tnb keysign:",
+		"message": "Import successful! <br><br>Please select the Keys you wish to store with leap keysign:",
 		"description": "When adding an wallet via master key"
 	},
 	"popup_html_loading": {
 		"message": "Loading...",
-		"description": "When initiating a TNBC transfer and the balance is loading."
+		"description": "When initiating a LEAP transfer and the balance is loading."
 	},
 	"popup_html_manage_accounts": {
 		"message": "Manage Wallets",
@@ -375,7 +379,7 @@
 		"description": "on preferences"
 	},
 	"popup_html_register": {
-		"message": "The best way to access your TNB wallets. Manage TNB assets, and connect to TNB applications. Keysign is Simple. Lightweight and Secure. <br/><br/> Lets start by creating a Keysign password.",
+		"message": "The best way to access your LEAP wallets. Manage LEAP assets, and connect to LEAPCHAIN applications. Keysign is Simple. Lightweight and Secure. <br/><br/> Lets start by creating a Keysign password.",
 		"description": "Text on registration page"
 	},
 	"popup_html_remove": {
@@ -400,7 +404,7 @@
 	},
 	"popup_html_send": {
 		"message": "Send $1",
-		"description": "ex: Send TNBC"
+		"description": "ex: Send LEAP"
 	},
 	"popup_html_send_max": {
 		"message": "Send Max",
@@ -418,7 +422,7 @@
 		"description": "when adding new wallet"
 	},
 	"popup_html_setup_text": {
-		"message": "Enter a unique Wallet name, and Signing Key below. Your Signing Key will be encrypted on submit.<br/><br/> You may add / remove tnb wallets any time.",
+		"message": "Enter a unique Wallet name, and Signing Key below. Your Signing Key will be encrypted on submit.<br/><br/> You may add / remove leap wallets any time.",
 		"description": "When adding new wallet"
 	},
 	"popup_html_signin": {
@@ -458,14 +462,14 @@
 	},
 	"popup_html_transfer_funds": {
 		"message": "Transfer Funds",
-		"description": "When initiating a TNBC transfer"
+		"description": "When initiating a LEAP transfer"
 	},
 	"popup_html_transfer_to": {
 		"message": "To: ",
 		"description": "On transfer confirmation page"
 	},
 	"popup_html_unlock": {
-		"message": "The ultimate <strong>tnb</strong> wallet. Manage tnb assets, and connect to TNB applications.<br/><br/>Simple. Lightweight. Secure.",
+		"message": "The ultimate <strong>leap</strong> wallet. Manage LEAP assets, and connect to LEAPCHAIN applications.<br/><br/>Simple. Lightweight. Secure.",
 		"description": "Text on unlock page"
 	},
 	"popup_html_wallet_history": {
@@ -505,7 +509,7 @@
 		"description": "On preferences, list of rights that were given to some websites."
 	},
 	"confirm_transfer_text": {
-		"message": "Please confirm your transfer of <strong>$1 TNBC</strong><br/>to<br/>$2<br/><br/><br/><br/>This cannot be undone.<br/>Memo:<br/>$3",
+		"message": "Please confirm your transfer of <strong>$1 LEAP</strong><br/>to<br/>$2<br/><br/><br/><br/>This cannot be undone.<br/>Memo:<br/>$3",
 		"description": "before sending a transfer"
 	},
 	"popup_transfer_success": {

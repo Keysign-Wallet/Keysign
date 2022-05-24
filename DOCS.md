@@ -7,12 +7,12 @@ This is the documentation on how to use and work with the handshake feature of t
 The first step is to check if the extension is installed on the user's machine. This is fairly easy.
 
 ```js
-if (tnb_keysign) {
-	tnb_keysign.requestHandshake(() => console.log('Keysign is installed!'));
+if (leap_keysign) {
+	leap_keysign.requestHandshake(() => console.log('Keysign is installed!'));
 }
 ```
 
-Here, `tnb_keysign` is the global object added by the extension and `requestHandshake` is a method used communicate with keysign.
+Here, `leap_keysign` is the global object added by the extension and `requestHandshake` is a method used communicate with keysign.
 
 The `requestHandshake` method takes in one parameter which is the callback.
 
@@ -25,8 +25,8 @@ It takes 4 arguments, `txs`: an array of transactions to process - {to: "account
 `callback`: the callback and `bank`: the url of bank to use (optional) and `code`: any text to be used for signature verification (optional)
 
 ```js
-tnb_keysign.requestTransfer(
-    [{to: "accountNumber", amount: 1, memo: "hi"}],
+leap_keysign.requestTransfer(
+    {to: "accountNumber", amount: 1, memo: "hi"},
 	res => console.log(res),
 	'http://54.177.121.3',
 	'randomly generated one time code'
@@ -42,5 +42,5 @@ This can be useful for keysign logins on websites.
 It takes 3 parameters, `accountNumber`: The account number to check (can be an empty string to receive an account of user's choice), and `callback`: the callback, `code`: any text to be used for signature verification (optional)
 
 ```js
-tnb_keysign.requestVerify('fakeAccountNumber', res => console.log(res), 'code');
+leap_keysign.requestVerify('fakeAccountNumber', res => console.log(res), 'code');
 ```
