@@ -158,9 +158,6 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResp) {
 								result: {
 									verified: false,
 									accountNumber,
-									sig: walletsList
-										.getByAccountNumber(accountNumber)
-										.account.createSignature(code),
 								},
 							},
 							tab: request.tab,
