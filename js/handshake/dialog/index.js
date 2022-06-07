@@ -131,9 +131,10 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResp) {
 							$('#verify_ac').text()
 						) === walletsList.get($('.select-selected').text())
 					) {
-						let accountNumber = request.data.accountNumber
-							? undefined
-							: $('#verify_ac').text();
+                        let accountNumber = request.data.accountNumber;
+                        if (!accountNumber) {
+                            accountNumber = $("#verify_ac").text();
+                        }
 						chrome.runtime.sendMessage({
 							command: 'acceptVerification',
 							data: {
