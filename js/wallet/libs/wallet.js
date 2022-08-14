@@ -30,6 +30,14 @@ class Wallet {
 		return balanceObject.balance === null ? 0 : balanceObject.balance;
 	}
 
+	async getLocked() {
+		await this.init();
+		const lockedObject = await this.pv.getAccountLocked(
+			this.account.accountNumberHex
+		);
+		return lockedObject.locked === null ? 0 : balanceObject.locked;
+	}
+
 	async getTransactions() {
 		await this.init();
 		const transactions = await axios.get(

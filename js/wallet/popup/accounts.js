@@ -167,6 +167,14 @@ const showBalances = async () => {
 	$('#balance_loader').hide();
 };
 
+// show balance for this wallet
+const showBalancesLocked = async () => {
+	$('#wallet_amt_lock div')
+		.eq(0)
+		.html(numberWithCommas(await activeWallet.getLocked()));
+	$('#balance_loader').hide();
+};
+
 // Delete wallet (and encrypt the rest)
 const deleteAccount = i => {
 	walletsList.delete(i).save(mk);
