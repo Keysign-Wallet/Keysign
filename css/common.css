@@ -1,4 +1,5 @@
 :root {
+	--body-bg-primary: #f3f3f3;
 	--bg-primary: #ffffff;
 	--bg-secondary: #f3f6fa;
 	--fg-primary: #1565d8;
@@ -39,21 +40,23 @@ body {
 	margin: 0 !important;
 	overflow: hidden;
 	position: relative;
+	background: var(--body-bg-primary);
 }
 
 button {
-	border-radius: 5px;
-	width: 100%;
-	height: 48.43px;
-	text-align: center;
-	font-size: 20px;
-	line-height: 28px;
-	color: var(--bg-primary);
-	font-family: Futura;
-	text-transform: uppercase;
-	background-color: var(--fg-secondary);
-	border: solid 1px var(--fg-secondary);
-	cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    height: 48.43px;
+    text-align: center;
+    font-size: 15px;
+    line-height: 28px;
+    color: var(--bg-primary);
+    font-family: Futura;
+    text-transform: capitalize;
+    background-color: var(--fg-secondary);
+    border: solid 1px var(--fg-secondary);
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 button:hover {
@@ -68,11 +71,12 @@ input {
 	margin-bottom: 20px;
 	background: var(--bg-primary) 0% 0% no-repeat padding-box;
 	border-radius: 5px;
-	border: solid var(--stroke);
+	border: solid 1px var(--stroke);
 	opacity: 1;
 	padding-left: 60px;
 	font-size: 20px;
 	color: var(--text-secondary);
+	transition: 0.3s;
 }
 
 input:focus {
