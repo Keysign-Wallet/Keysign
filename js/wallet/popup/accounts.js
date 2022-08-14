@@ -16,7 +16,9 @@ const loadWallet = async (name, options) => {
 	activeWallet = walletsList.get(name);
 	$('#recipient');
 	$('.wallet_infos').html('...');
+	$('.wallet_infos_locked').html('...');
 	showUserData();
+	showUserDataLocked();
 	getAccountHistory();
 };
 
@@ -26,6 +28,13 @@ const showUserData = async () => {
 	$('.transfer_balance div')
 		.eq(1)
 		.html(numberWithCommas(await activeWallet.getBalance()));
+};
+
+const showUserDataLocked = async () => {
+	showBalancesLocked();
+	$('.transfer_balance_locked div')
+		.eq(1)
+		.html(numberWithCommas(await activeWallet.getLocked()));
 };
 
 $('.transfer_row-container .transfer_row-close-icon').click(e => {

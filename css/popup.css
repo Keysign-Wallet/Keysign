@@ -659,6 +659,24 @@ h3 {
 	line-height: 28px;
 }
 
+.transfer_balance_locked {
+	padding: 18px 0px 15.21px 0px;
+	background-color: rgba(255, 255, 255, 0.2);
+	box-sizing: border-box;
+	text-align: center;
+}
+
+.transfer_balance_locked div:first-of-type {
+	margin-bottom: 12px;
+	font-size: 16px;
+	line-height: 22px;
+}
+
+.transfer_balance_locked div:last-of-type {
+	font-size: 20px;
+	line-height: 28px;
+}
+
 #send_div #amt_send {
 	margin-right: 7px;
 	text-align: right;
