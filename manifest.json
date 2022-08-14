@@ -2,7 +2,7 @@
 	"name": "__MSG_keysign__",
 	"description": "__MSG_description__",
 	"default_locale": "en",
-	"version": "0.5.4",
+	"version": "0.5.5",
 	"permissions": ["storage", "idle"],
 	"browser_action": {
 		"default_popup": "html/popup.html",

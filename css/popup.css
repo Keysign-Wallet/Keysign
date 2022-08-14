@@ -598,7 +598,19 @@ h3 {
 	background-color: #ff1616;
 }
 
+#wallet_balance {
+	width: 229px;
+	float: left;
+	padding-left: 32px;
+}
+
 #wallet_amt {
+	width: 229px;
+	float: left;
+	padding-left: 32px;
+}
+
+#wallet_balance_locked {
 	width: 229px;
 	float: left;
 	padding-left: 32px;

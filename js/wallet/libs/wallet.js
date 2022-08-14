@@ -35,7 +35,7 @@ class Wallet {
 		const lockedObject = await this.pv.getAccountLocked(
 			this.account.accountNumberHex
 		);
-		return lockedObject.locked === null ? 0 : balanceObject.locked;
+		return lockedObject.locked === null ? 0 : lockedObject.locked;
 	}
 
 	async getTransactions() {
