@@ -521,6 +521,15 @@ h3 {
 	line-height: 25px;
 }
 
+#wallet_amt_lock,
+#wallet_currency_lock {
+	display: inline-block;
+	height: 28px;
+	text-align: right;
+	font-size: 20px;
+	line-height: 25px;
+}
+
 #wallet {
 	display: inline-block;
 	margin-left: -32px;
@@ -536,7 +545,16 @@ h3 {
 	margin-bottom: 20px;
 }
 
+#wallet_amt_lock div,
+.wallet_currency_lock {
+	margin-bottom: 20px;
+}
+
 #wallet_amt div:last-of-type {
+	margin-bottom: 0px !important;
+}
+
+#wallet_amt_lock div:last-of-type {
 	margin-bottom: 0px !important;
 }
 
@@ -545,6 +563,10 @@ h3 {
 	margin-left: 5px;
 }
 
+#wallet_currency_lock {
+	width: 50px;
+	margin-left: 5px;
+}
 .dropdown img {
 	height: 18px;
 	width: 18px;
@@ -576,7 +598,25 @@ h3 {
 	background-color: #ff1616;
 }
 
+#wallet_balance {
+	width: 229px;
+	float: left;
+	padding-left: 32px;
+}
+
 #wallet_amt {
+	width: 229px;
+	float: left;
+	padding-left: 32px;
+}
+
+#wallet_balance_locked {
+	width: 229px;
+	float: left;
+	padding-left: 32px;
+}
+
+#wallet_amt_lock {
 	width: 229px;
 	float: left;
 	padding-left: 32px;
@@ -627,6 +667,24 @@ h3 {
 }
 
 .transfer_balance div:last-of-type {
+	font-size: 20px;
+	line-height: 28px;
+}
+
+.transfer_balance_locked {
+	padding: 18px 0px 15.21px 0px;
+	background-color: rgba(255, 255, 255, 0.2);
+	box-sizing: border-box;
+	text-align: center;
+}
+
+.transfer_balance_locked div:first-of-type {
+	margin-bottom: 12px;
+	font-size: 16px;
+	line-height: 22px;
+}
+
+.transfer_balance_locked div:last-of-type {
 	font-size: 20px;
 	line-height: 28px;
 }
