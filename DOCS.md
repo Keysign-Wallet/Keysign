@@ -8,7 +8,7 @@ The first step is to check if the extension is installed on the user's machine. 
 
 ```js
 if (leap_keysign) {
-	leap_keysign.requestHandshake(() => console.log('Keysign is installed!'));
+  leap_keysign.requestHandshake(() => console.log('Keysign is installed!'));
 }
 ```
 
@@ -26,10 +26,10 @@ It takes 4 arguments, `txs`: an array of transactions to process - {to: "account
 
 ```js
 leap_keysign.requestTransfer(
-    {to: "accountNumber", amount: 1, memo: "hi"},
-	res => console.log(res),
-	'http://54.177.121.3',
-	'randomly generated one time code'
+  { to: 'accountNumber', amount: 1, memo: 'hi' },
+  (res) => console.log(res),
+  'http://54.177.121.3',
+  'randomly generated one time code'
 );
 ```
 
@@ -42,5 +42,5 @@ This can be useful for keysign logins on websites.
 It takes 3 parameters, `accountNumber`: The account number to check (can be an empty string to receive an account of user's choice), and `callback`: the callback, `code`: any text to be used for signature verification (optional)
 
 ```js
-leap_keysign.requestVerify('fakeAccountNumber', res => console.log(res), 'code');
+leap_keysign.requestVerify('fakeAccountNumber', (res) => console.log(res), 'code');
 ```
